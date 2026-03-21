@@ -2,268 +2,253 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Earth Care Movement | অফিসিয়াল সদস্য ও নাগরিক পরিষেবা পোর্টাল</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
+    <title>OECM Master Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Hind Siliguri', sans-serif; background-color: #f2f5f8; margin: 0; color: #333; }
+        :root { --blue: #0056b3; --dark: #003366; --green: #28a745; --bg: #f2f5f8; }
+        body { font-family: 'Hind Siliguri', sans-serif; margin: 0; background: var(--bg); color: #333; overflow-x: hidden; }
         
-        /* বাংলারভূমি স্টাইল টপ হেডার (White Header) */
-        .header-top { background: #ffffff; padding: 15px 0; border-bottom: 3px solid #004085; }
-        .logo-area img { height: 95px; width: 95px; border-radius: 50%; border: 3px solid #004085; padding: 2px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .title-area { margin-left: 20px; border-left: 2.5px solid #004085; padding-left: 20px; }
-        .title-area h2 { margin: 0; font-weight: 700; color: #004085; font-size: 30px; letter-spacing: 0.5px; }
-        .title-area p { margin: 0; font-size: 16px; color: #555; font-weight: 600; }
-
-        /* সরকারি গাড় নীল মেনুবার (Dark Blue Navbar) */
-        .navbar-gov { background: #004085 !important; border-bottom: 4px solid #ffc107; padding: 0 !important; }
-        .navbar-gov .nav-link { color: #ffffff !important; font-weight: 600; padding: 12px 18px !important; border-right: 1px solid rgba(255,255,255,0.1); font-size: 14px; text-transform: uppercase; }
-        .navbar-gov .nav-link:hover { background: #0056b3; color: #ffc107 !important; }
-
-        /* হিরো ব্যানার এরিয়া */
-        .hero-banner { width: 100%; height: 280px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; border-bottom: 5px solid #ffc107; }
-
-        /* নোটিশ বক্স ও লাইভ মেম্বার কাউন্ট (Grey Section) */
-        .notice-grey-box { background: #e9ecef; border: 1px solid #ced4da; border-radius: 8px; padding: 25px; margin-top: -50px; position: relative; z-index: 10; box-shadow: 0 4px 20px rgba(0,0,0,0.12); border-left: 8px solid #004085; }
-        .stats-badge { background: #fff; padding: 10px; border-radius: 5px; border-bottom: 4px solid #004085; text-align: center; font-weight: bold; }
-
-        /* কন্টেন্ট কার্ড */
-        .content-card { background: #ffffff; padding: 25px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #ddd; }
-        .card-header-gov { background: #004085; color: white; padding: 10px 20px; border-radius: 5px 5px 0 0; font-weight: bold; margin: -25px -25px 20px -25px; border-bottom: 3.5px solid #ffc107; font-size: 15px; text-transform: uppercase; }
-
-        /* প্রফেশনাল মেম্বার আইডি কার্ড (Sequential ID) */
-        #idCard { display: none; width: 340px; height: 580px; background: #fff; border: 2.5px solid #004085; border-radius: 12px; margin: 20px auto; overflow: hidden; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.25); }
-        .id-card-header { background: #004085; color: white; padding: 10px; text-align: center; border-bottom: 5px solid #ffc107; position: relative; }
-        .id-card-header img { height: 45px; position: absolute; left: 10px; top: 12px; border-radius: 50%; background: #fff; padding: 2px; }
-        .id-card-header h6 { margin: 0; font-size: 16px; font-weight: bold; padding-left: 45px; line-height: 1.2; }
+        /* Header & Nav (BanglarBhumi Style) */
+        header { background: #fff; padding: 10px 5%; border-bottom: 4px solid var(--blue); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo-box h1 { margin: 0; font-size: 22px; color: var(--blue); letter-spacing: 1px; }
         
-        .id-photo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #004085; margin: 18px auto; display: block; object-fit: cover; background: #f8f9fa; }
-        .id-body { padding: 5px 25px; text-align: left; font-size: 14px; }
-        .id-field { margin-bottom: 8px; border-bottom: 1px solid #eee; display: flex; align-items: baseline; }
-        .id-label { font-weight: bold; color: #004085; width: 115px; flex-shrink: 0; }
-        .id-value { color: #333; font-weight: 500; }
-        .id-card-footer { position: absolute; bottom: 0; width: 100%; background: #004085; color: white; padding: 12px; font-size: 15px; text-align: center; font-weight: bold; }
+        nav { background: var(--blue); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav ul { list-style: none; display: flex; margin: 0; padding: 0; justify-content: center; }
+        nav ul li a { color: #fff; text-decoration: none; padding: 15px 20px; display: block; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        nav ul li a:hover { background: var(--dark); }
 
-        /* বাটন ও লিংক স্টাইল */
-        .btn-gov { background: #004085; color: white; font-weight: bold; border: none; padding: 12px 25px; width: 100%; transition: 0.3s; }
-        .btn-gov:hover { background: #002d5a; color: #ffc107; transform: scale(1.02); }
-        .wa-btn { background: #25D366; color: white; font-weight: bold; text-decoration: none; border-radius: 50px; padding: 10px 20px; display: inline-block; width: 100%; text-align: center; margin-bottom: 10px; }
-        .fb-btn { background: #1877F2; color: white; font-weight: bold; text-decoration: none; border-radius: 50px; padding: 10px 20px; display: inline-block; width: 100%; text-align: center; }
-        
-        footer { background: #001a33; color: #ccc; padding: 25px 0; text-align: center; border-top: 5px solid #ffc107; margin-top: 50px; }
+        /* Icon Grid */
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; padding: 25px 5%; }
+        .s-card { background: #fff; padding: 20px; text-align: center; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; border-bottom: 4px solid var(--blue); transition: 0.3s; }
+        .s-card:hover { transform: translateY(-3px); background: #eef6ff; }
+        .s-card img { width: 40px; margin-bottom: 10px; }
+        .s-card span { display: block; font-size: 14px; font-weight: bold; color: var(--blue); }
+
+        /* Sections */
+        .section { padding: 40px 5%; display: none; }
+        .active { display: block; animation: fadeIn 0.4s; }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        .box { background: #fff; padding: 35px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .title { color: var(--blue); border-bottom: 3px solid var(--green); display: inline-block; margin-bottom: 30px; padding-bottom: 5px; }
+
+        /* Form */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
+        .full { grid-column: span 2; }
+        .btn-main { background: var(--green); color: #fff; border: none; padding: 15px; border-radius: 6px; cursor: pointer; font-size: 18px; font-weight: bold; width: 100%; margin-top: 15px; }
+        .btn-main:disabled { background: #ccc; }
+
+        /* Blue-White ID Card (Active) */
+        #idCard { width: 330px; background: white; border: 2px solid var(--blue); border-radius: 15px; margin: 20px auto; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .id-head { background: var(--blue); color: white; padding: 18px 10px; text-align: center; }
+        .id-img { width: 105px; height: 125px; border: 3px solid var(--blue); margin: 15px auto; display: block; object-fit: cover; border-radius: 5px; background: #f9f9f9; }
+        .id-info { padding: 15px 25px; text-align: left; font-size: 13.5px; line-height: 1.7; }
+        .reg-badge { background: var(--blue); color: #fff; padding: 3px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+
+        /* Table */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; font-size: 14px; }
+        th { background: var(--blue); color: white; }
+
+        footer { background: #222; color: #fff; text-align: center; padding: 25px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-<div class="header-top">
-    <div class="container d-flex align-items-center">
-        <div class="logo-area">
-            <img src="logo.png" id="mainLogo" onerror="this.src='https://via.placeholder.com/95?text=OECM+Logo'" alt="OECM Logo">
-        </div>
-        <div class="title-area">
-            <h2>One Earth Care Movement</h2>
-            <p>Environment & Social Welfare Organization | Member & Citizen Services Portal</p>
-        </div>
+<header>
+    <div class="logo-box">
+        <h1>ONE EARTH CARE MOVEMENT</h1>
+        <p style="margin:0; font-size:12px; font-weight:bold; color:#666;">Peace Through Service | এক পৃথিবী, এক পরিবার</p>
     </div>
-</div>
+    <button onclick="adminAuth()" style="background:var(--blue); color:#fff; border:none; padding:8px 18px; border-radius:5px; cursor:pointer; font-weight:bold;">অ্যাডমিন লগইন</button>
+</header>
 
-<nav class="navbar navbar-expand-lg navbar-gov sticky-top shadow">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="#">হোম</a></li>
-                <li class="nav-item"><a class="nav-link" href="#registration">সদস্য আবেদন</a></li>
-                <li class="nav-item"><a class="nav-link" href="#community">কমিউনিটি</a></li>
-                <li class="nav-item"><a class="nav-link" href="#video">গ্যালারি</a></li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link bg-danger text-white px-4 fw-bold shadow-sm" href="#donate">DONATE NOW</a></li>
-                <li class="nav-item"><a class="nav-link bg-warning text-dark px-3 fw-bold ms-lg-2" href="#admin">অ্যাডমিন লগইন</a></li>
-            </ul>
-        </div>
-    </div>
+<nav>
+    <ul>
+        <li><a onclick="showSection('homePage')">হোম</a></li>
+        <li><a onclick="showSection('regPage')">সদস্য নিবন্ধন</a></li>
+        <li><a onclick="showSection('objPage')">উদ্দেশ্যসমূহ</a></li>
+        <li><a onclick="showSection('donatePage')">দান করুন</a></li>
+        <li><a onclick="showSection('contactPage')">যোগাযোগ</a></li>
+    </ul>
 </nav>
 
-<div class="hero-banner"></div>
 <div class="container">
-    <div class="notice-grey-box shadow-sm">
-        <div class="row align-items-center">
-            <div class="col-md-9">
-                <h5 class="notice-title">গুরুত্বপূর্ণ ঘোষণা (Notice Board)</h5>
-                <p class="mb-0 text-muted">সুস্থ পরিবেশ ও সুন্দর ভবিষ্যৎ গড়তে আমাদের অভিযানে শামিল হোন। আপনার সঠিক তথ্য, **ব্লাড গ্রুপ**, **আধার নম্বর** এবং **রেফারেন্স** সহ ফর্মটি পূরণ করে ডিজিটাল আইডি কার্ড জেনারেট করুন।</p>
-            </div>
-            <div class="col-md-3 text-center border-start mt-3 mt-md-0">
-                <h6 class="fw-bold text-primary">বর্তমান সদস্য সংখ্যা</h6>
-                <div class="bg-white p-2 rounded border shadow-sm">
-                    <strong id="liveCount" style="font-size: 24px; color: #dc3545;">১</strong>
+    <section id="homePage" class="section active">
+        <div class="service-grid">
+            <div class="s-card" onclick="showSection('regPage')"><img src="https://cdn-icons-png.flaticon.com/512/3456/3456426.png"><span>মেম্বারশিপ</span></div>
+            <div class="s-card" onclick="showSection('objPage')"><img src="https://cdn-icons-png.flaticon.com/512/1063/1063376.png"><span>আমাদের লক্ষ্য</span></div>
+            <div class="s-card" onclick="showSection('donatePage')"><img src="https://cdn-icons-png.flaticon.com/512/1162/1162951.png"><span>অনুদান দিন</span></div>
+            <div class="s-card" onclick="showSection('contactPage')"><img src="https://cdn-icons-png.flaticon.com/512/1034/1034131.png"><span>যোগাযোগ</span></div>
+        </div>
+        <div class="box" style="text-align:center;">
+            <h2 style="color:var(--blue)">স্বাগতম ওয়ান আর্থ কেয়ার মুভমেন্ট পোর্টালে</h2>
+            <p>মানবতার সেবায় এবং পরিবেশ রক্ষায় আমরা একতাবদ্ধ। আপনার নিবন্ধন আমাদের শক্তি।</p>
+        </div>
+    </section>
+
+    <section id="regPage" class="section">
+        <div class="box">
+            <h2 class="title">📝 সদস্য মেম্বারশিপ ফর্ম</h2>
+            <form id="regForm">
+                <div class="form-grid">
+                    <input type="text" name="name" placeholder="আপনার পূর্ণ নাম *" required>
+                    <input type="text" name="fatherName" placeholder="বাবার নাম *" required>
+                    <div class="full"><textarea name="address" placeholder="গ্রাম, পোস্ট, জেলা এবং পিন কোডসহ বিস্তারিত ঠিকানা *" required></textarea></div>
+                    <select name="bloodGroup" required>
+                        <option value="">রক্তের গ্রুপ নির্বাচন করুন *</option>
+                        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option><option>A-</option><option>B-<option><option>AB-</option><option>O-</option>
+                    </select>
+                    <input type="text" name="idCardNum" placeholder="আধার কার্ড / ভোটার কার্ড নম্বর *" required>
+                    <input type="text" name="reference" placeholder="রেফারেন্স আইডি (যদি থাকে)">
+                    <div><label style="font-size:12px; font-weight:bold;">আপনার ফটো (ID কার্ডের জন্য) *</label><input type="file" name="photo" accept="image/*" required></div>
+                    <div><label style="font-size:12px; font-weight:bold;">ID কার্ডের স্ক্যান কপি (ID Proof) *</label><input type="file" name="idProof" required></div>
                 </div>
-            </div>
+                <button type="button" class="btn-main" id="subBtn" onclick="submitData()">আবেদন জমা দিন এবং আইডি কার্ড পান</button>
+            </form>
+            <div id="loader" style="display:none; text-align:center; margin-top:15px; color:var(--blue); font-weight:bold;">অটো আইডি কার্ড জেনারেট হচ্ছে... দয়া করে অপেক্ষা করুন।</div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="container mt-5" id="registration">
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="content-card">
-                <div class="card-header-gov">Online Member Application Form</div>
-                <form id="oecmMainForm">
-                    <div class="row g-3">
-                        <div class="col-md-6"><label class="fw-bold">সদস্যের নাম *</label><input type="text" id="uName" class="form-control" required></div>
-                        <div class="col-md-6"><label class="fw-bold">পিতার নাম *</label><input type="text" id="fName" class="form-control" required></div>
-                        <div class="col-md-6"><label class="fw-bold">মোবাইল নম্বর *</label><input type="tel" id="uPhone" class="form-control" required></div>
-                        <div class="col-md-6">
-                            <label class="fw-bold">রক্তের গ্রুপ *</label>
-                            <select id="uBlood" class="form-select" required>
-                                <option value="" selected disabled>নির্বাচন করুন</option>
-                                <option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="fw-bold">সদস্যের ধরন *</label>
-                            <select id="uType" class="form-select" required>
-                                <option value="সাধারণ সদস্য" selected>সাধারণ সদস্য</option>
-                                <option value="সক্রিয় সদস্য">সক্রিয় সদস্য</option>
-                                <option value="ভলান্টিয়ার">ভলান্টিয়ার</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6"><label class="fw-bold">আধার / ভোটার নম্বর *</label><input type="text" id="uIdNo" class="form-control" placeholder="ID Number" required></div>
-                        <div class="col-12"><label class="fw-bold">রেফারেন্স (কার মাধ্যমে যুক্ত হচ্ছেন) *</label><input type="text" id="uRef" class="form-control" placeholder="রেফারেন্স নাম বা আইডি" required></div>
-                        <div class="col-12"><label class="fw-bold">স্থায়ী ঠিকানা *</label><textarea id="uAddr" class="form-control" rows="2" required></textarea></div>
-                        
-                        <div class="col-md-6"><label class="fw-bold">সদস্যের ফটো আপলোড (Passport) *</label><input type="file" id="uPhoto" class="form-control" accept="image/*" required></div>
-                        <div class="col-md-6"><label class="fw-bold">আধার/ভোটার ফটো আইডি আপলোড *</label><input type="file" id="uIdDoc" class="form-control" accept="image/*" required></div>
-                        <div class="col-md-12"><label class="fw-bold">ভিডিও কার্যক্রমের লিঙ্ক (Optional)</label><input type="url" id="vLink" class="form-control" placeholder="YouTube/Drive Link"></div>
-                        
-                        <div class="col-12 mt-4 text-center">
-                            <button type="button" id="saveBtn" onclick="processAll()" class="btn btn-gov shadow-sm py-3">তথ্য সেভ ও আইডি কার্ড জেনারেট করুন</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="col-lg-4 text-center">
+    <section id="idResultPage" class="section">
+        <div class="box" style="text-align:center;">
+            <h2 style="color:var(--green)">অভিনন্দন! আপনার নিবন্ধন সফল হয়েছে।</h2>
             <div id="idCard">
-                <div class="id-card-header">
-                    <img src="https://ibb.co/JVCRyd8" onerror="this.src='https://via.placeholder.com/40?text=OECM'" alt="Logo">
-                    <h6>ONE EARTH CARE MOVEMENT</h6>
+                <div class="id-head">
+                    <h3 style="margin:0; font-size:17px;">ONE EARTH CARE MOVEMENT</h3>
+                    <span style="font-size:10px;">PEACE THROUGH SERVICE | NGO</span>
                 </div>
-                <img id="dispPhoto" src="" class="id-photo" alt="Photo">
-                <h5 id="dispName" class="text-primary fw-bold mb-3">সদস্যের নাম</h5>
-                <div class="id-body">
-                    <div class="id-field"><span class="id-label">পিতা:</span> <span id="dispFName" class="id-value"></span></div>
-                    <div class="id-field"><span class="id-label">সদস্য পদ:</span> <span id="dispType" class="id-value fw-bold text-success"></span></div>
-                    <div class="id-field"><span class="id-label">রক্তের গ্রুপ:</span> <span id="dispBlood" class="id-value text-danger fw-bold"></span></div>
-                    <div class="id-field"><span class="id-label">রেফারেন্স:</span> <span id="dispRef" class="id-value text-primary fw-bold"></span></div>
-                    <div class="id-field"><span class="id-label">আধার নং:</span> <span id="dispIdCard" class="id-value"></span></div>
-                    <div class="id-field"><span class="id-label">আইডি নং:</span> <span id="dispSerial" class="id-value text-danger fw-bold">OECM-2026-0001</span></div>
+                <img id="resPhoto" class="id-img" src="">
+                <div class="id-info">
+                    <center><span class="reg-badge" id="resReg">REG ID: ---</span></center><br>
+                    <b>নাম:</b> <span id="resName">---</span><br>
+                    <b>পিতা:</b> <span id="resFather">---</span><br>
+                    <b>ঠিকানা:</b> <span id="resAddr">---</span><br>
+                    <b>রক্তের গ্রুপ:</b> <span id="resBlood" style="color:red; font-weight:bold;">---</span><br>
+                    <b>রেফারেন্স:</b> <span id="resRef">---</span>
                 </div>
-                <div class="id-card-footer">ONE EARTH CARE MOVEMENT</div>
+                <div style="background:var(--blue); color:#fff; padding:10px; font-size:10px;">🌐 www.oneearthcare.org | মানবতার জয় হোক</div>
             </div>
-            <button id="downloadBtn" style="display:none;" onclick="downloadID()" class="btn btn-success w-100 mt-2 fw-bold shadow">Save ID Card (PNG)</button>
+            <button class="btn-main" style="max-width:250px;" onclick="window.print()">কার্ডটি ডাউনলোড / প্রিন্ট করুন</button>
         </div>
-    </div>
+    </section>
 
-    <div class="row mt-4" id="community">
-        <div class="col-md-6 mb-3">
-            <div class="content-card text-center h-100 shadow-sm">
-                <h5 class="text-primary fw-bold mb-3 border-bottom pb-2">আমাদের কমিউনিটি</h5>
-                <a href="#" https://chat.whatsapp.com/K9ueGiCco6mBeyyYZknjMp">WhatsApp Group</a>
-                <a href="#" class="https://www.facebook.com/groups/856962137363381/?ref=share&mibextid=NSMWBT">Facebook Community</a>
+    <section id="objPage" class="section">
+        <div class="box">
+            <h2 class="title">🌱 আমাদের মূল লক্ষ্য ও উদ্দেশ্যসমূহ</h2>
+            <div style="line-height:2.2; font-weight:600; font-size:17px;">
+                1️⃣ দরিদ্র ও অসহায় শিশুদের শিক্ষা সহায়তা<br>
+                2️⃣ স্বাস্থ্য সচেতনতা ও চিকিৎসা সেবা<br>
+                3️⃣ নারী ও শিশু কল্যাণ কর্মসূচি<br>
+                4️⃣ পরিবেশ সংরক্ষণ ও বৃক্ষরোপণ অভিযান<br>
+                5️⃣ বেকার যুবকদের দক্ষতা উন্নয়ন ও কর্মসংস্থান<br>
+                6️⃣ দুর্যোগ ত্রাণ ও মানবিক সাহায্য<br>
+                7️⃣ সামাজিক সচেতনতা ও মানবাধিকার রক্ষা
             </div>
         </div>
-        <div class="col-md-6 mb-3" id="donate">
-            <div class="content-card h-100 shadow-sm border-danger">
-                <div class="card-header-gov bg-danger">সাহায্য তহবিল (Donation)</div>
-                <p class="small text-muted mt-2">আপনার অনুদান পরিবেশ রক্ষায় আমাদের অঙ্গীকার পূর্ণ করতে সাহায্য করবে।</p>
-                <div class="text-center p-3 bg-light border mb-2"><img src="https://via.placeholder.com/150?text=QR+Code" alt="QR" height="80"><p class="small mb-0 mt-1">Scan for UPI Pay</p></div>
-                <button class="btn btn-outline-danger w-100 fw-bold">Donate Now</button>
+    </section>
+
+    <section id="donatePage" class="section">
+        <div class="box" style="text-align:center;">
+            <h2 class="title">💰 অনুদান প্রদান করুন</h2>
+            <p>আপনার সাহায্য আমাদের কার্যক্রমকে আরও শক্তিশালী করবে।</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin-top:20px; text-align:left;">
+                <div style="border:1.5px solid var(--blue); padding:15px; border-radius:10px;">
+                    <h4 style="color:var(--blue); margin-top:0;">🏛️ ব্যাংক অ্যাকাউন্ট</h4>
+                    <b>ব্যাংক:</b> SBI | <b>নাম:</b> ONE EARTH CARE MOVEMENT<br>
+                    <b>অ্যাকাউন্ট:</b> 0000000000 | <b>IFSC:</b> SBIN00000
+                </div>
+                <div style="border:1.5px solid var(--green); padding:15px; border-radius:10px; text-align:center;">
+                    <h4 style="color:var(--green); margin-top:0;">📱 G-Pay / PhonePe</h4>
+                    <b>UPI:</b> oneearth@upi<br>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=OECM_Donation" width="90" style="margin-top:10px;">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="adminPage" class="section">
+        <div class="box">
+            <h2 class="title">📁 মেম্বার ডাটাবেস (অ্যাডমিন)</h2>
+            <div style="overflow-x:auto;">
+                <table id="adminTable">
+                    <thead><tr><th>Reg No</th><th>নাম</th><th>পিতা</th><th>রক্ত</th><th>আধার/ভোটার</th><th>ঠিকানা</th><th>ফটো</th></tr></thead>
+                    <tbody id="adminBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactPage" class="section">
+        <div class="box" style="text-align:center;">
+            <h2 class="title">📞 যোগাযোগ ও সোশ্যাল মিডিয়া</h2>
+            <p>আমাদের সাথে সরাসরি যুক্ত হতে নিচের বাটনগুলো ব্যবহার করুন:</p>
+            <a href="#" style="background:#25D366; color:white; padding:12px 25px; text-decoration:none; border-radius:6px; font-weight:bold; display:inline-block; margin:10px;">WhatsApp Group</a>https://chat.whatsapp.com/K9ueGiCco6mBeyyYZknjMp
+            <a href="#" style="background:#1877F2; color:white; padding:12px 25px; text-decoration:none; border-radius:6px; font-weight:bold; display:inline-block; margin:10px;">Facebook Group</a>https://www.facebook.com/groups/856962137363381/?ref=share&mibextid=NSMWBT
+            <p style="margin-top:20px;">📧 ইমেইল: <b>oneearthcaremovment@gmail.com</b></p>
+        </div>
+    </section>
 </div>
 
 <footer>
-    <div class="container text-white">
-        <p class="mb-1 fw-bold">One Earth Care Movement</p>
-        <p class="mb-0 small">© 2026 | সুস্থ পরিবেশ ও সমাজ গঠনের লক্ষে আমাদের পথচলা</p>
-    </div>
+    <p>&copy; 2026 One Earth Care Movement . মানবতার জয় হোক।</p>
 </footer>
 
 <script>
-    // অটো সিরিয়াল কাউন্টার লজিক (১ থেকে শুরু)
-    let serialCount = localStorage.getItem('oecm_member_count') || 1;
-    document.getElementById('liveCount').innerText = serialCount;
-
-    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-
-    async function processAll() {
-        const name = document.getElementById('uName').value;
-        const photo = document.getElementById('uPhoto').files[0];
-        const btn = document.getElementById('saveBtn');
-
-        if(!name || !photo) { alert("নাম ও ছবি প্রদান করা বাধ্যতামূলক!"); return; }
-
-        btn.innerText = "ডাটা সেভ হচ্ছে...";
-        btn.disabled = true;
-
-        // সিরিয়াল নম্বর জেনারেশন (OECM-2026-0001 ফরম্যাট)
-        let formattedID = "OECM-2026-" + String(serialCount).padStart(4, '0');
-        document.getElementById('dispSerial').innerText = formattedID;
-
-        // ডাটাবেসে তথ্য পাঠানোর জন্য FormData
-        const formData = new FormData();
-        formData.append('uName', name);
-        formData.append('fName', document.getElementById('fName').value);
-        formData.append('uPhone', document.getElementById('uPhone').value);
-        formData.append('uBlood', document.getElementById('uBlood').value);
-        formData.append('uType', document.getElementById('uType').value);
-        formData.append('uRef', document.getElementById('uRef').value);
-        formData.append('uIdNo', document.getElementById('uIdNo').value);
-        formData.append('vLink', document.getElementById('vLink').value);
-        formData.append('serial', formattedID);
-
-        try {
-            await fetch(scriptURL, { method: 'POST', body: formData });
-            // সফল হলে সিরিয়াল এক বেড়ে যাবে
-            serialCount++;
-            localStorage.setItem('oecm_member_count', serialCount);
-            document.getElementById('liveCount').innerText = serialCount;
-            alert("আপনার তথ্য সফলভাবে সংরক্ষিত হয়েছে!");
-        } catch (error) { console.error('Error!', error.message); }
-
-        // আইডি কার্ডে ডাটা প্রদর্শন
-        document.getElementById('dispName').innerText = name;
-        document.getElementById('dispFName').innerText = document.getElementById('fName').value;
-        document.getElementById('dispType').innerText = document.getElementById('uType').value;
-        document.getElementById('dispBlood').innerText = document.getElementById('uBlood').value;
-        document.getElementById('dispRef').innerText = document.getElementById('uRef').value;
-        document.getElementById('dispIdCard').innerText = document.getElementById('uIdNo').value;
-
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            document.getElementById('dispPhoto').src = e.target.result;
-            document.getElementById('idCard').style.display = 'block';
-            document.getElementById('downloadBtn').style.display = 'block';
-            btn.innerText = "ডাটা সংরক্ষিত হয়েছে";
-            window.scrollTo({top: document.getElementById('idCard').offsetTop - 100, behavior: 'smooth'});
-        };
-        reader.readAsDataURL(photo);
+    // Navigation Control
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
     }
 
-    function downloadID() {
-        html2canvas(document.getElementById('idCard')).then(canvas => {
-            const link = document.createElement('a');
-            link.download = 'OECM_Member_Card.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        });
+    // Admin Authentication
+    function adminAuth() {
+        var pass = prompt("অ্যাডমিন পাসওয়ার্ড দিন:");
+        if (!pass) return;
+        google.script.run.withSuccessHandler(function(isValid) {
+            if(isValid) { showSection('adminPage'); loadAdmin(); }
+            else alert("ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।");
+        }).verifyAdmin(pass);
+    }
+
+    // Form Submission
+    function submitData() {
+        var form = document.getElementById('regForm');
+        if (!form.checkValidity()) { alert("দয়া করে সব ঘর সঠিক তথ্য দিয়ে পূরণ করুন।"); return; }
+        
+        document.getElementById('loader').style.display = 'block';
+        document.getElementById('subBtn').disabled = true;
+
+        google.script.run.withSuccessHandler(function(res) {
+            document.getElementById('loader').style.display = 'none';
+            if(res.status === "Success") {
+                document.getElementById('resName').innerText = res.name;
+                document.getElementById('resFather').innerText = res.fatherName;
+                document.getElementById('resAddr').innerText = res.address;
+                document.getElementById('resReg').innerText = "REG ID: " + res.regNo;
+                document.getElementById('resBlood').innerText = res.bloodGroup;
+                document.getElementById('resRef').innerText = res.reference || "N/A";
+                document.getElementById('resPhoto').src = res.photoUrl;
+                showSection('idResultPage');
+            } else {
+                alert("ত্রুটি: " + res.message);
+                document.getElementById('subBtn').disabled = false;
+            }
+        }).processForm(form);
+    }
+
+    // Load Admin Data
+    function loadAdmin() {
+        google.script.run.withSuccessHandler(function(data) {
+            var tbody = document.getElementById('adminBody');
+            tbody.innerHTML = "";
+            for (var i = 1; i < data.length; i++) {
+                var row = `<tr><td>${data[i][1]}</td><td>${data[i][2]}</td><td>${data[i][3]}</td><td>${data[i][5]}</td><td>${data[i][7]}</td><td>${data[i][4]}</td><td><a href="${data[i][8]}" target="_blank">View</a></td></tr>`;
+                tbody.innerHTML += row;
+            }
+        }).getAdminData();
     }
 </script>
-
 </body>
 </html>
