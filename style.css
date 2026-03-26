@@ -1,0 +1,9 @@
+body {font-family: Arial; margin:0; background:#f4f8f7;}
+header {background: linear-gradient(to right,#0077b6,#2ecc71); color:white; text-align:center; padding:10px;}
+header img {height:60px;}
+nav {background:#023e8a; padding:10px; text-align:center;}
+nav a {color:white; margin:10px; text-decoration:none;}
+.banner {height:250px; background:url('banar.jpg') center/cover;}
+.container {padding:20px;}
+.card {background:white; padding:15px; margin:10px 0; border-radius:10px;}
+.btn {background:#2ecc71; color:white; padding:10px; border:none; cursor:pointer;}
