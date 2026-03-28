@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OECM | One Earth Care Movement Official Portal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --govt-blue: #005689;
+            --govt-light: #eef7ff;
+            --govt-orange: #ff9933;
+            --white: #ffffff;
+            --text-dark: #333;
+        }
+
+        body { margin: 0; font-family: 'Hind Siliguri', sans-serif; background-color: #f4f6f8; color: var(--text-dark); }
+
+        /* Banner & Top Header */
+        .top-header { background: #f8f9fa; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 14px; border-bottom: 1px solid #ddd; }
+        .banner-container { width: 100%; background: #fff; border-bottom: 4px solid var(--govt-orange); }
+        #main-banner { width: 100%; max-height: 280px; object-fit: cover; display: block; }
+
+        /* Branding Header */
+        header { background: var(--white); padding: 15px 5%; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo-box { width: 100px; height: 100px; margin-right: 20px; }
+        #disp-logo { width: 100%; height: 100%; object-fit: contain; }
+
+        /* Navigation */
+        nav { background: var(--govt-blue); display: flex; padding: 0 5%; position: sticky; top: 0; z-index: 1000; overflow-x: auto; }
+        nav button { background: none; border: none; color: white; padding: 15px 25px; cursor: pointer; font-weight: 600; font-size: 16px; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.1); }
+        nav button:hover, nav button.active { background: var(--govt-orange); color: #000; }
+
+        /* Wrapper Layout */
+        .wrapper { max-width: 1300px; margin: 20px auto; display: grid; grid-template-columns: 3fr 1fr; gap: 20px; padding: 0 20px; }
+        .main-content { background: var(--white); padding: 25px; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .sidebar { background: #fff; padding: 20px; border-radius: 4px; border: 1px solid #ddd; }
+
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* Milestone Bar */
+        .progress-box { background: var(--govt-light); padding: 15px; border-radius: 5px; border: 1px solid #b3d7ff; margin-bottom: 20px; }
+        .bar-bg { background: #ddd; height: 20px; border-radius: 10px; margin: 10px 0; overflow: hidden; }
+        #p-bar { background: var(--govt-blue); height: 100%; width: 0%; transition: 1s ease; text-align: center; color: white; font-size: 12px; line-height: 20px; }
+
+        /* Forms Styling */
+        .form-section-title { background: var(--govt-light); padding: 10px; border-left: 5px solid var(--govt-blue); font-weight: bold; margin: 20px 0 15px 0; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        .btn-submit { background: var(--govt-blue); color: white; border: none; padding: 15px; width: 100%; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 18px; margin-top: 20px; }
+
+        /* Official ID Card Design */
+        .id-card-wrap { width: 340px; margin: 25px auto; background: var(--white); border: 1px solid var(--govt-blue); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .id-card-header { background: var(--govt-blue); color: white; padding: 15px; text-align: center; }
+        .id-card-header h4 { margin: 0; font-size: 14px; text-transform: uppercase; }
+        .id-card-body { padding: 20px; display: flex; flex-direction: column; align-items: center; background: linear-gradient(180deg, #fff 0%, #eef7ff 100%); }
+        .id-photo-box { width: 100px; height: 115px; border: 2px solid var(--govt-blue); border-radius: 5px; overflow: hidden; margin-bottom: 15px; background: #eee; }
+        .id-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+        .id-info-table { width: 100%; font-size: 13px; border-collapse: collapse; }
+        .id-info-table td { padding: 4px 0; vertical-align: top; }
+        .info-label { font-weight: bold; width: 40%; color: var(--govt-blue); }
+        .verified-seal { margin-top: 15px; border: 2px solid green; color: green; padding: 3px 12px; font-weight: bold; border-radius: 5px; transform: rotate(-8deg); display: inline-block; font-size: 12px; }
+
+        /* Admin Table */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f8f9fa; color: var(--govt-blue); }
+
+        #loader { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.9); z-index:9999; justify-content:center; align-items:center; flex-direction:column; font-weight:bold; }
+        footer { background: #222; color: white; text-align: center; padding: 25px; margin-top: 50px; }
+        @media (max-width: 850px) { .wrapper { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div id="loader">⚙️ ডাটা সংরক্ষণ করা হচ্ছে...</div>
+
+<div class="top-header">
+    <span>স্বাগতম: ওয়ান আর্থ কেয়ার মুভমেন্ট (OECM) পোর্টাল</span>
+    <span id="live-date"></span>
+</div>
+
+<div class="banner-container">
+    <img id="main-banner" src="banar.jpeg" onerror="this.src='https://via.placeholder.com/1200x280?text=OECM+BANNER'">
+</div>
+
+<header>
+    <div class="logo-box"><img id="disp-logo" src="GGG.jpg" onerror="this.src='https://via.placeholder.com/100?text=LOGO'"></div>
+    <div class="brand-text">
+        <h1 style="color:var(--govt-blue); margin:0;">ONE EARTH CARE MOVEMENT</h1>
+        <p style="margin:5px 0 0;">এক পৃথিবী — এক মানবতা — এক দায়িত্ব</p>
+    </div>
+</header>
+
+<nav>
+    <button onclick="tab('home')" class="active">হোম</button>
+    <button onclick="tab('reg')">সদস্য নিবন্ধন</button>
+    <button onclick="tab('status')">আইডি কার্ড ডাউনলোড</button>
+    <button onclick="tab('admin')">এডমিন প্যানেল</button>
+</nav>
+
+<div class="wrapper">
+    <main class="main-content">
+        
+        <div id="home" class="page active">
+            <h2 style="color:var(--govt-blue);">আমাদের লক্ষ্য ও মাইলস্টোন</h2>
+            <p>OECM-এর লক্ষ্য ১,০০,০০০ সদস্য সংগ্রহের মাধ্যমে মানবতার সেবা করা।</p>
+            
+            <div class="progress-box">
+                <strong>মাইলস্টোন: ১০০ সদস্য</strong>
+                <div class="bar-bg"><div id="p-bar">0%</div></div>
+                <p>বর্তমান সদস্য: <span id="member-count" style="font-weight: bold;">0</span> / ১০০</p>
+            </div>
+            
+            <div style="background:#fff9e6; padding:15px; border-radius:5px; border-left:5px solid #ffcc00;">
+                <h4 style="margin:0 0 5px 0;">নোটিশ বোর্ড:</h4>
+                <p style="margin:0; font-size:14px;">নিবন্ধন শেষে এডমিন ভেরিফিকেশন হলে আইডি কার্ড ডাউনলোড করা যাবে।</p>
+            </div>
+        </div>
+
+        <div id="reg" class="page">
+            <div class="form-section-title">ব্যক্তিগত তথ্য ও আপলোড</div>
+            <div class="form-grid">
+                <div><label>পূর্ণ নাম (আবশ্যক)</label><input type="text" id="m-name" placeholder="আপনার নাম লিখুন"></div>
+                <div><label>পিতার নাম</label><input type="text" id="m-father" placeholder="পিতার নাম"></div>
+                <div><label>মোবাইল নম্বর (আবশ্যক)</label><input type="number" id="m-mob" placeholder="মোবাইল নম্বর"></div>
+                <div><label>আধার নম্বর</label><input type="number" id="m-aadhar" placeholder="আধার নম্বর"></div>
+                <div><label>রক্তের গ্রুপ</label>
+                    <select id="m-blood">
+                        <option value="">নির্বাচন করুন</option>
+                        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option>
+                    </select>
+                </div>
+                <div><label>রেফারেন্স নাম</label><input type="text" id="m-ref" placeholder="কে রেফার করেছে?"></div>
+            </div>
+            <div style="margin-top:15px;"><label>স্থায়ী ঠিকানা</label><textarea id="m-addr" rows="2" placeholder="পূর্ণ ঠিকানা লিখুন"></textarea></div>
+            
+            <div class="form-section-title">ফাইল ও ছবি আপলোড</div>
+            <div class="form-grid">
+                <div><label>📸 নিজের ছবি (Photo - আবশ্যক)</label><input type="file" id="up-photo" accept="image/*"></div>
+                <div><label>🆔 আইডি কার্ড (Aadhar Card)</label><input type="file" id="up-idcard" accept="image/*"></div>
+            </div>
+            <button class="btn-submit" onclick="submitRegistration()">নিবন্ধন সম্পন্ন করুন</button>
+        </div>
+
+        <div id="status" class="page">
+            <h3>🔍 আইডি কার্ড ডাউনলোড</h3>
+            <input type="number" id="search-mob" placeholder="রেজিস্টার্ড মোবাইল নম্বর দিন">
+            <button class="btn-submit" style="margin-top:10px;" onclick="searchID()">কার্ড খুঁজুন</button>
+            <div id="id-result-area"></div>
+        </div>
+
+        <div id="admin" class="page">
+            <div id="login-box">
+                <h3>🔐 এডমিন লগইন</h3>
+                <input type="password" id="admin-pass" placeholder="পাসওয়ার্ড">
+                <button class="btn-submit" onclick="loginAdmin()">লগইন</button>
+            </div>
+            <div id="admin-data" style="display:none;">
+                <h3>📊 সদস্য ডাটাবেস</h3>
+                <button onclick="downloadExcel()" style="background:#28a745; color:white; padding:10px; border:none; border-radius:4px; cursor:pointer; margin-bottom:10px;">📥 Excel ডাউনলোড</button>
+                <div style="overflow-x:auto;">
+                    <table id="admin-table">
+                        <thead>
+                            <tr>
+                                <th>নাম</th>
+                                <th>মোবাইল</th>
+                                <th>রেফারেন্স</th>
+                                <th>ছবি</th>
+                                <th>অ্যাকশন</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <aside class="sidebar">
+        <h4>📞 হেল্পলাইন</h4>
+        <p style="font-weight: bold; color: var(--govt-blue);">7908393114</p>
+        <hr>
+        <a href="https://chat.whatsapp.com/K9ueGiCco6mBeyyYZknjMp" target="_blank" style="display:block; background:#25D366; color:white; text-align:center; padding:10px; border-radius:5px; text-decoration:none;">WhatsApp Group</a>
+    </aside>
+</div>
+
+<footer>
+    <p>© 2026 ONE EARTH CARE MOVEMENT | Developed by Azimul Hossain</p>
+</footer>
+
+<script>
+    // Google Script URL boshan
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvxT4HGdpU0E0k78pPynFGBsCQ3Jz1l49v50dLTO08XV5sNpOcWhDl6WcoHbk1hQSo/exec";
+    
+    let db = JSON.parse(localStorage.getItem('oecm_final_db')) || [];
+    let pBase = "";
+
+    document.getElementById('live-date').innerText = "তারিখ: " + new Date().toLocaleDateString('bn-BD');
+
+    function tab(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+        if(event) event.target.classList.add('active');
+    }
+
+    document.getElementById('up-photo').onchange = e => {
+        let r = new FileReader(); r.onload = () => pBase = r.target.result; r.readAsDataURL(e.target.files[0]);
+    };
+
+    async function submitRegistration() {
+        const name = document.getElementById('m-name').value;
+        const mob = document.getElementById('m-mob').value;
+        if(!name || !mob || !pBase) return alert("নাম, মোবাইল এবং নিজের ছবি দেওয়া আবশ্যক!");
+
+        document.getElementById('loader').style.display = 'flex';
+        const member = {
+            id: "OECM-" + Math.floor(1000 + Math.random()*9000),
+            name, mob, 
+            father: document.getElementById('m-father').value,
+            blood: document.getElementById('m-blood').value,
+            ref: document.getElementById('m-ref').value || "Direct",
+            aadhar: document.getElementById('m-aadhar').value,
+            addr: document.getElementById('m-addr').value,
+            photo: pBase, verified: false
+        };
+        db.push(member);
+        localStorage.setItem('oecm_final_db', JSON.stringify(db));
+
+        try { await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(member) }); } catch(e){}
+        document.getElementById('loader').style.display = 'none';
+        alert("আবেদন সফল! এডমিন ভেরিফাই করলে কার্ড ডাউনলোড করা যাবে।");
+        updateStats(); tab('home');
+    }
+
+    function searchID() {
+        const mob = document.getElementById('search-mob').value;
+        const m = db.find(u => u.mob === mob);
+        const res = document.getElementById('id-result-area');
+        if(!m) return res.innerHTML = "ডাটা পাওয়া যায়নি!";
+        
+        if(!m.verified) {
+            res.innerHTML = "<p style='color:orange;'>আপনার কার্ডটি বর্তমানে Pending অবস্থায় আছে।</p>";
+        } else {
+            res.innerHTML = `
+                <div class="id-card-wrap">
+                    <div class="id-card-header"><h4>MEMBERSHIP CARD</h4></div>
+                    <div class="id-card-body">
+                        <div class="id-photo-box"><img src="${m.photo}"></div>
+                        <table class="id-info-table">
+                            <tr><td class="info-label">NAME</td><td>: ${m.name}</td></tr>
+                            <tr><td class="info-label">MEMBER ID</td><td>: ${m.id}</td></tr>
+                            <tr><td class="info-label">MOBILE</td><td>: ${m.mob}</td></tr>
+                        </table>
+                        <div class="verified-seal">VERIFIED</div>
+                    </div>
+                </div>
+                <button class="btn-submit" onclick="window.print()">সেভ / প্রিন্ট করুন</button>`;
+        }
+    }
+
+    function loginAdmin() {
+        if(document.getElementById('admin-pass').value === "231977") {
+            document.getElementById('login-box').style.display='none';
+            document.getElementById('admin-data').style.display='block';
+            loadAdminList();
+        } else alert("ভুল পাসওয়ার্ড!");
+    }
+
+    function loadAdminList() {
+        const b = document.getElementById('admin-tbody'); b.innerHTML = "";
+        db.forEach((m, i) => {
+            if(!m.verified) {
+                b.innerHTML += `<tr>
+                    <td>${m.name}</td>
+                    <td>${m.mob}</td>
+                    <td style="color:blue; font-weight:bold;">${m.ref}</td>
+                    <td><img src="${m.photo}" width="40"></td>
+                    <td><button onclick="approveMember(${i})">Verify</button></td>
+                </tr>`;
+            }
+        });
+    }
+
+    function approveMember(i) {
+        db[i].verified = true;
+        localStorage.setItem('oecm_final_db', JSON.stringify(db));
+        alert("সদস্য ভেরিফাই করা হয়েছে!"); loadAdminList(); updateStats();
+    }
+
+    function downloadExcel() {
+        let table = document.getElementById("admin-table");
+        let html = table.outerHTML;
+        let url = 'data:application/vnd.ms-excel,' + encodeURIComponent(html);
+        let link = document.createElement("a");
+        link.download = "OECM_Members.xls"; link.href = url; link.click();
+    }
+
+    function updateStats() {
+        const count = db.filter(m => m.verified).length;
+        document.getElementById('member-count').innerText = count;
+        let prg = Math.min((count / 100) * 100, 100);
+        document.getElementById('p-bar').style.width = prg + "%";
+        document.getElementById('p-bar').innerText = count + " Members";
+    }
+    window.onload = updateStats;
+</script>
+</body>
+</html>
