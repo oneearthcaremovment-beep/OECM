@@ -880,9 +880,6 @@ footer{background:#060f24;color:rgba(255,255,255,.8);padding:50px 20px 20px;}
             <div class="apn" id="ap-pending">
               <h3 style="font-size:.95rem;margin-bottom:14px;color:var(--blue)">⏳ অপেক্ষারত আবেদন</h3>
               <div class="vtable-wrap"><table class="vtable"><thead><tr><th>ছবি সহ নাম</th><th>পিতার নাম</th><th>এলাকা</th><th>রক্ত</th><th>তারিখ</th><th>কার্যক্রম</th></tr></thead><tbody id="pendTbody">
-                <tr><td><div class="mncell"><div class="mpic">👤</div><div><div style="font-weight:700">রাহুল মণ্ডল</div><div style="font-size:.7rem;color:var(--textg)">বাগমারা সদর</div></div></div></td><td>রমেশ মণ্ডল</td><td><span class="abadge ab-bag">বাগমারা</span></td><td><span class="bbadge">O+</span></td><td>১১/০৪/২৫</td><td><button class="actbtn aapp" onclick="doApprove(this,'রাহুল মণ্ডল','বাগমারা','O+','স্বেচ্ছাসেবক',null,'রমেশ মণ্ডল')">✓</button><button class="actbtn arej" onclick="doReject(this)">✗</button></td></tr>
-                <tr><td><div class="mncell"><div class="mpic">👤</div><div><div style="font-weight:700">সুমাইয়া খাতুন</div><div style="font-size:.7rem;color:var(--textg)">কান্দি সদর</div></div></div></td><td>আলমগীর হোসেন</td><td><span class="abadge ab-kan">কান্দি</span></td><td><span class="bbadge">B+</span></td><td>১০/০৪/২৫</td><td><button class="actbtn aapp" onclick="doApprove(this,'সুমাইয়া খাতুন','কান্দি','B+','সাধারণ সদস্য',null,'আলমগীর হোসেন')">✓</button><button class="actbtn arej" onclick="doReject(this)">✗</button></td></tr>
-                <tr><td><div class="mncell"><div class="mpic">👤</div><div><div style="font-weight:700">করিম শেখ</div><div style="font-size:.7rem;color:var(--textg)">নারাগাঁও</div></div></div></td><td>হামিদ শেখ</td><td><span class="abadge ab-bag">বাগমারা</span></td><td><span class="bbadge">A+</span></td><td>০৯/০৪/২৫</td><td><button class="actbtn aapp" onclick="doApprove(this,'করিম শেখ','বাগমারা','A+','রক্তদাতা',null,'হামিদ শেখ')">✓</button><button class="actbtn arej" onclick="doReject(this)">✗</button></td></tr>
               </tbody></table></div>
             </div>
 
@@ -952,7 +949,7 @@ footer{background:#060f24;color:rgba(255,255,255,.8);padding:50px 20px 20px;}
                 <div class="adm-stat"><div class="num" style="color:var(--green2)" id="stApproved2">0</div><div class="lbl">অনুমোদিত</div></div>
                 <div class="adm-stat"><div class="num" style="color:#e65100" id="stBag">0</div><div class="lbl">বাগমারা</div></div>
                 <div class="adm-stat"><div class="num" style="color:var(--green)" id="stKan">0</div><div class="lbl">কান্দি</div></div>
-              </div>
+              <div class="adm-stat"><div class="num" style="color:var(--green)" id="stKan">0</div><div class="lbl">বহরমপুর</div></div>
             </div>
           </div>
         </div>
@@ -967,7 +964,7 @@ footer{background:#060f24;color:rgba(255,255,255,.8);padding:50px 20px 20px;}
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>🌍 One Earth Care Movement</h3>
-        <p>ওয়ান আর্থ কেয়ার মুভমেন্ট — মুর্শিদাবাদের বাগমারা ও কান্দি এলাকায় সামাজিক উন্নয়ন, রক্তদান ও পরিবেশ সংরক্ষণে নিবেদিত স্বেচ্ছাসেবী সংগঠন।</p>
+        <p>ওয়ান আর্থ কেয়ার মুভমেন্ট — মুর্শিদাবাদের এলাকায় সামাজিক উন্নয়ন, রক্তদান ও পরিবেশ সংরক্ষণে নিবেদিত স্বেচ্ছাসেবী সংগঠন।</p>
         <div style="margin-top:14px;display:flex;gap:10px;">
           <span style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;">📘</span>
           <span style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;">📷</span>
@@ -1029,12 +1026,7 @@ let isAdmin=false;
 let members=ST.get('oecm_members',[]);
 if(!members.length){
   members=[
-    {id:'OECM-2025-0001',serial:1,name:'আব্দুল করিম',name_en:'Abdul Karim',father:'রহিম মণ্ডল',role:'সাধারণ সদস্য',blood:'A+',area:'বাগমারা',village:'নারাগাঁও',phone:'9876543210',status:'approved',photo:null,date:'০১/০১/২০২৫',dob:''},
-    {id:'OECM-2025-0002',serial:2,name:'মালেকা বেগম',name_en:'Maleka Begum',father:'করিম শেখ',role:'স্বেচ্ছাসেবক',blood:'O+',area:'বাগমারা',village:'বাগমারা সদর',phone:'9123456780',status:'approved',photo:null,date:'০৫/০১/২০২৫',dob:''},
-    {id:'OECM-2025-0003',serial:3,name:'প্রিয়া দাস',name_en:'Priya Das',father:'সুকুমার দাস',role:'রক্তদাতা',blood:'B-',area:'কান্দি',village:'কান্দি সদর',phone:'8765432109',status:'approved',photo:null,date:'১০/০১/২০২৫',dob:''},
-    {id:'OECM-2025-0004',serial:4,name:'মিজানুর রহমান',name_en:'Mizanur Rahman',father:'মজিবর রহমান',role:'কার্যকরী সদস্য',blood:'AB+',area:'কান্দি',village:'খেজুরি',phone:'7766554433',status:'approved',photo:null,date:'১৫/০২/২০২৫',dob:'',inSheet:true},
-    {id:'OECM-2025-0005',serial:5,name:'নবিদ হাসান',name_en:'Nabid Hassan',father:'নুর হাসান',role:'স্বেচ্ছাসেবক',blood:'B+',area:'কান্দি',village:'কান্দি পশ্চিম',phone:'9988776655',status:'approved',photo:null,date:'২০/০২/২০২৫',dob:''},
-    {id:'OECM-2025-0006',serial:6,name:'রাহুল মণ্ডল',name_en:'Rahul Mondal',father:'বিমল মণ্ডল',role:'রক্তদাতা',blood:'O+',area:'বাগমারা',village:'বাগমারা উত্তর',phone:'8899001122',status:'approved',photo:null,date:'০১/০৩/২০২৫',dob:''}
+    
   ];
   ST.set('oecm_members',members);
 }
