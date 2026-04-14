@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Earth Care Movement | One Earth, One Responsibility</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --blue-dark: #0a1f44;
+  --blue-mid: #1a3a6e;
+  --blue-accent: #2563eb;
+  --blue-light: #3b82f6;
+  --gold: #f59e0b;
+  --green: #16a34a;
+  --red: #dc2626;
+  --white: #ffffff;
+  --gray-light: #f1f5f9;
+  --gray: #94a3b8;
+  --shadow: 0 20px 60px rgba(10,31,68,0.18);
+  --shadow-sm: 0 4px 20px rgba(10,31,68,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', 'Hind Siliguri', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* ======= 3D SCROLLBAR ======= */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #e2e8f0; }
+::-webkit-scrollbar-thumb { background: var(--blue-mid); border-radius: 4px; }
+
+/* ======= TICKER ======= */
+.ticker {
+  background: linear-gradient(90deg, var(--gold), #fbbf24);
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: ticker 30s linear infinite;
+}
+@keyframes ticker {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ======= HEADER ======= */
+header {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo-circle {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 3px var(--gold), 0 6px 20px rgba(0,0,0,0.3);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.logo-circle img { width: 58px; height: 58px; object-fit: contain; }
+.logo-circle .logo-fallback {
+  font-size: 26px;
+}
+.org-name {
+  color: var(--white);
+}
+.org-name h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+.org-name .tagline {
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 1px;
+}
+.org-name .location {
+  font-size: 10px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  color: var(--white);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
+.btn-red {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(220,38,38,0.4);
+}
+.btn-red:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(220,38,38,0.5); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue-accent), var(--blue-light));
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), #d97706);
+  color: var(--blue-dark);
+}
+.btn-gold:hover { transform: translateY(-2px); }
+.btn-green {
+  background: linear-gradient(135deg, var(--green), #15803d);
+  color: var(--white);
+}
+.btn-green:hover { transform: translateY(-2px); }
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 40px;
+  background: rgba(0,0,0,0.2);
+}
+nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 16px;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  letter-spacing: 0.5px;
+}
+nav a:hover, nav a.active {
+  color: var(--white);
+  border-bottom-color: var(--gold);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ======= HERO ======= */
+#hero {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, #0d2d5e 50%, #1a3a6e 100%);
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(245,158,11,0.12), transparent 70%);
+  border-radius: 50%;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%);
+  border-radius: 50%;
+}
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+.hero-text { flex: 1; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,158,11,0.2);
+  border: 1px solid rgba(245,158,11,0.4);
+  color: var(--gold);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.hero-text p {
+  color: rgba(255,255,255,0.75);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  min-width: 200px;
+}
+.stat-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 20px 24px;
+  text-align: center;
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+}
+.stat-card:hover { transform: translateY(-4px) rotateX(5deg); }
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label { color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 4px; }
+
+/* SECTIONS */
+.section { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-left: 10px;
+}
+
+/* QUICK LINKS */
+#quick-links { background: var(--white); padding: 30px 40px; }
+.ql-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.ql-item {
+  text-align: center;
+  padding: 20px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid #e2e8f0;
+  background: var(--white);
+}
+.ql-item:hover {
+  border-color: var(--blue-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+.ql-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 22px;
+}
+.ql-label { font-size: 12px; font-weight: 700; color: var(--blue-dark); }
+
+/* MEMBER TABLE */
+.table-wrap {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.table-header {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+  color: var(--white);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 15px;
+}
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: #f1f5f9;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-align: left;
+  border-bottom: 2px solid #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+td {
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+tr:hover td { background: #f8fafc; }
+.blood-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 11px;
+  color: var(--white);
+  background: var(--red);
+}
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.status-approved { background: #dcfce7; color: #15803d; }
+.status-pending { background: #fef9c3; color: #a16207; }
+
+/* BLOOD SEARCH */
+#blood-section { background: #fff5f5; }
+.blood-filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center; }
+.blood-btn {
+  padding: 8px 18px;
+  border-radius: 24px;
+  border: 2px solid #fca5a5;
+  background: var(--white);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--red);
+}
+.blood-btn.active, .blood-btn:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+.blood-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 16px; }
+.blood-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.3s;
+}
+.blood-card:hover { transform: translateY(-4px); }
+.blood-avatar {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  color: var(--blue-mid);
+  flex-shrink: 0;
+}
+.bc-info h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.bc-info .village { font-size: 11px; color: var(--gray); margin-bottom: 6px; }
+.bc-info a { color: var(--red); font-weight: 700; font-size: 13px; text-decoration: none; }
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 16px;
+}
+.gallery-album {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.gallery-album:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow); }
+.album-cover {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.album-info { padding: 14px; }
+.album-info h4 { font-size: 13px; font-weight: 700; }
+.album-info span { font-size: 11px; color: var(--gray); }
+
+/* NOTICE BOARD */
+.notice-list { display: flex; flex-direction: column; gap: 12px; }
+.notice-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background: var(--white);
+  border-radius: 12px;
+  border-left: 4px solid var(--blue-accent);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.notice-item:hover { transform: translateX(4px); }
+.notice-date {
+  background: var(--blue-dark);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  min-width: 50px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.notice-content h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.notice-content p { font-size: 12px; color: var(--gray); }
+
+/* CONTACT SECTION */
+#contact-section { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: var(--white); padding: 60px 40px; }
+.contact-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-info h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px; }
+.contact-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.contact-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.contact-text { font-size: 14px; line-height: 1.6; }
+.contact-text strong { display: block; font-weight: 700; margin-bottom: 2px; }
+
+/* MAP AREA */
+#map-area { background: var(--white); padding: 0; }
+.map-container { width: 100%; height: 400px; background: #e2e8f0; position: relative; overflow: hidden; }
+.map-container iframe { width: 100%; height: 100%; border: none; }
+
+/* FOOTER */
+footer {
+  background: #060f24;
+  color: rgba(255,255,255,0.8);
+  padding: 50px 40px 20px;
+}
+.footer-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer-brand h3 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 20px; margin-bottom: 8px; }
+.footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.6); }
+.footer-col h4 { color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.65); font-size: 13px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ======= PAGES (SPA) ======= */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ======= MODALS ======= */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--white);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+  from { transform: translateY(30px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.modal-header {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+  color: var(--white);
+  padding: 20px 24px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 { font-family: 'Playfair Display', serif; font-size: 18px; }
+.modal-close { background: rgba(255,255,255,0.2); border: none; color: var(--white); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.modal-close:hover { background: rgba(255,255,255,0.35); }
+.modal-body { padding: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--blue-dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  background: var(--white);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--blue-accent);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.photo-upload {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f8fafc;
+}
+.photo-upload:hover { border-color: var(--blue-accent); background: #eff6ff; }
+.photo-upload-icon { font-size: 36px; color: var(--gray); margin-bottom: 8px; }
+.photo-upload p { font-size: 13px; color: var(--gray); }
+.alert { padding: 12px 16px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; }
+.alert-warn { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+.alert-info { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+.alert-success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
+
+/* PASSWORD MODAL */
+.pwd-field {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.pwd-field input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+.pwd-field input:focus { outline: none; border-color: var(--blue-accent); }
+
+/* ID CARD */
+.id-card-container { perspective: 1000px; }
+.id-card-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.id-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.id-card:hover { transform: rotateY(5deg) rotateX(-3deg); }
+.id-front {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+  color: var(--white);
+  padding: 0;
+}
+.id-front-header {
+  background: var(--blue-dark);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid var(--gold);
+}
+.id-front-header .logo-sm { width: 36px; height: 36px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.id-front-header .org-text { font-size: 10px; font-weight: 700; line-height: 1.4; }
+.id-front-body { padding: 16px; }
+.id-photo-area {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.id-photo {
+  width: 70px; height: 80px;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+.id-member-info h3 { font-size: 15px; font-weight: 800; margin-bottom: 2px; }
+.id-member-info .role-tag {
+  background: var(--gold);
+  color: var(--blue-dark);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 800;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.id-detail { font-size: 10px; margin-bottom: 4px; color: rgba(255,255,255,0.8); }
+.id-detail strong { color: var(--white); }
+.id-footer {
+  background: rgba(0,0,0,0.25);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.id-number { font-size: 11px; font-weight: 800; font-family: monospace; }
+.id-qr { width: 36px; height: 36px; background: var(--white); border-radius: 4px; display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; padding: 4px; }
+.id-qr-cell { background: var(--blue-dark); }
+.id-qr-cell.w { background: var(--white); }
+
+.id-back { background: var(--white); padding: 0; }
+.id-back-header { background: linear-gradient(135deg, var(--red), #b91c1c); color: var(--white); padding: 12px 16px; font-weight: 700; font-size: 13px; }
+.id-back-body { padding: 16px; }
+.blood-display {
+  width: 54px; height: 54px;
+  background: var(--red);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.id-org-info { font-size: 11px; color: #64748b; line-height: 1.7; margin-bottom: 12px; }
+.id-rules { font-size: 10px; color: #64748b; }
+.id-rules li { margin-bottom: 4px; }
+.id-sig { margin-top: 16px; border-top: 1px solid #e2e8f0; padding-top: 10px; text-align: center; font-size: 10px; color: var(--gray); }
+
+/* ADMIN PANEL */
+#admin-panel { display: none; background: #f1f5f9; min-height: 100vh; }
+#admin-panel.visible { display: block; }
+.admin-layout { display: grid; grid-template-columns: 240px 1fr; gap: 0; min-height: calc(100vh - 160px); }
+.admin-sidebar {
+  background: var(--blue-dark);
+  padding: 24px 0;
+}
+.admin-sidebar-title { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px; }
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  font-weight: 600;
+  border-left: 3px solid transparent;
+}
+.sidebar-item:hover, .sidebar-item.active {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border-left-color: var(--gold);
+}
+.sidebar-badge {
+  margin-left: auto;
+  background: var(--red);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+.admin-main { padding: 30px; }
+.admin-page { display: none; }
+.admin-page.active { display: block; }
+.admin-page-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 24px; color: var(--blue-dark); }
+.approval-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.approval-info { flex: 1; }
+.approval-info h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.approval-info p { font-size: 12px; color: var(--gray); }
+.approval-actions { display: flex; gap: 8px; }
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.admin-stat {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.admin-stat .number { font-size: 32px; font-weight: 800; font-family: 'Playfair Display', serif; }
+.admin-stat .label { font-size: 12px; color: var(--gray); margin-top: 4px; }
+.notice-form { background: var(--white); border-radius: 14px; padding: 24px; box-shadow: var(--shadow-sm); }
+.photo-grid-admin { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 12px; margin-top: 16px; }
+.photo-thumb {
+  border-radius: 10px;
+  height: 110px;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* REGISTRATION FORM PAGE */
+#registration-page { display: none; padding: 40px; }
+#registration-page.active { display: block; }
+.reg-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.reg-header {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+  color: var(--white);
+  padding: 24px 30px;
+}
+.reg-header h2 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 4px; }
+.reg-header p { font-size: 13px; color: rgba(255,255,255,0.7); }
+.reg-body { padding: 30px; }
+.reg-section { margin-bottom: 24px; }
+.reg-section-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--blue-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 3px solid var(--gold);
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+/* DONATION */
+.donation-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 16px; }
+.donation-opt {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.donation-opt:hover, .donation-opt.selected {
+  border-color: var(--red);
+  background: #fff5f5;
+}
+.donation-opt .amount { font-size: 22px; font-weight: 800; color: var(--red); }
+.donation-opt .label { font-size: 11px; color: var(--gray); }
+
+/* SEARCH OVERLAY */
+.location-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid var(--blue-accent);
+  box-shadow: var(--shadow);
+}
+
+/* TOASTER */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--blue-dark);
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 99999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow);
+  max-width: 320px;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast.success { background: var(--green); }
+.toast.error { background: var(--red); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-top { padding: 10px 16px; }
+  nav { padding: 0 8px; overflow-x: auto; }
+  #hero { padding: 30px 16px; }
+  .hero-content { flex-direction: column; }
+  .hero-text h2 { font-size: 30px; }
+  .hero-stats { grid-template-columns: repeat(3,1fr); }
+  .section { padding: 30px 16px; }
+  .ql-grid { grid-template-columns: repeat(3,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .admin-layout { grid-template-columns: 1fr; }
+  .id-card-wrap { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .admin-stats-grid { grid-template-columns: repeat(2,1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Loading spinner */
+.spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-top-color: var(--white); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 3D card effect */
+.card-3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    🌍 One Earth Care Movement — মানবতার সেবায় একতাবদ্ধ &nbsp;&nbsp;&nbsp; 🩸 জরুরি রক্তের প্রয়োজনে যোগাযোগ করুন — আমরা পাশে আছি &nbsp;&nbsp;&nbsp; 📝 নতুন সদস্যপদ নিবন্ধন চলছে — এখনই আবেদন করুন &nbsp;&nbsp;&nbsp; 🌱 রক্তদান শিবির — ২০ এপ্রিল ২০২৫ &nbsp;&nbsp;&nbsp; 🌍 One Earth Care Movement — Dedicated to serving humanity
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="logo-area">
+      <div class="logo-circle">
+        <span class="logo-fallback">🌍</span>
+      </div>
+      <div class="org-name">
+        <h1>One Earth Care Movement</h1>
+        <div class="tagline">ONE EARTH, ONE RESPONSIBILITY</div>
+        <div class="location">📍 MURSHIDABAD, WEST BENGAL, INDIA</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-outline" onclick="showJoinModal()"><i class="fas fa-user-plus"></i> Join Us</button>
+      <button class="btn btn-red" onclick="showPage('blood')"><i class="fas fa-tint"></i> Find Blood</button>
+    </div>
+  </div>
+  <nav>
+    <a href="#" class="active" onclick="showPage('home');return false;"><i class="fas fa-home"></i> Home</a>
+    <a href="#" onclick="showPage('members');return false;"><i class="fas fa-users"></i> Members</a>
+    <a href="#" onclick="showPage('registration');return false;"><i class="fas fa-clipboard"></i> Register</a>
+    <a href="#" onclick="showPage('idcard');return false;"><i class="fas fa-id-card"></i> ID Card</a>
+    <a href="#" onclick="showPage('blood');return false;"><i class="fas fa-tint"></i> Blood</a>
+    <a href="#" onclick="showPage('gallery');return false;"><i class="fas fa-images"></i> Gallery</a>
+    <a href="#" onclick="openAdminLogin();return false;"><i class="fas fa-lock"></i> Admin</a>
+    <a href="#" onclick="showPage('contact');return false;"><i class="fas fa-phone"></i> Contact</a>
+  </nav>
+</header>
+
+<!-- ==================== PAGES ==================== -->
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">🌍 India • West Bengal • Murshidabad</div>
+        <h2>One Earth<br>Care Movement</h2>
+        <p>Dedicated to serving humanity in Murshidabad — through blood donation, social development, and environmental protection. We stand together for a better tomorrow.</p>
+        <div class="hero-btns">
+          <button class="btn btn-gold" onclick="showJoinModal()"><i class="fas fa-user-plus"></i> Become Member</button>
+          <button class="btn btn-outline" onclick="showPage('blood')"><i class="fas fa-tint"></i> Find Blood</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-members">348</div>
+          <div class="stat-label">Total Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-donors">124</div>
+          <div class="stat-label">Blood Donors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-donations">56</div>
+          <div class="stat-label">Successful Donations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <div id="quick-links">
+    <div class="ql-grid">
+      <div class="ql-item card-3d" onclick="showPage('members')">
+        <div class="ql-icon" style="background:#eff6ff;color:#2563eb;"><i class="fas fa-users"></i></div>
+        <div class="ql-label">Member List</div>
+      </div>
+      <div class="ql-item card-3d" onclick="showJoinModal()">
+        <div class="ql-icon" style="background:#f0fdf4;color:#16a34a;"><i class="fas fa-user-plus"></i></div>
+        <div class="ql-label">Register</div>
+      </div>
+      <div class="ql-item card-3d" onclick="showPage('blood')">
+        <div class="ql-icon" style="background:#fff5f5;color:#dc2626;"><i class="fas fa-tint"></i></div>
+        <div class="ql-label">Find Blood</div>
+      </div>
+      <div class="ql-item card-3d" onclick="showPage('idcard')">
+        <div class="ql-icon" style="background:#fefce8;color:#ca8a04;"><i class="fas fa-id-card"></i></div>
+        <div class="ql-label">ID Card</div>
+      </div>
+      <div class="ql-item card-3d" onclick="showPage('gallery')">
+        <div class="ql-icon" style="background:#f5f3ff;color:#7c3aed;"><i class="fas fa-images"></i></div>
+        <div class="ql-label">Gallery</div>
+      </div>
+      <div class="ql-item card-3d" onclick="openAdminLogin()">
+        <div class="ql-icon" style="background:#fff7ed;color:#ea580c;"><i class="fas fa-shield-alt"></i></div>
+        <div class="ql-label">Admin</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEMBERS + NOTICE -->
+  <div style="background:#f8fafc; padding: 40px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:24px;">
+      <!-- Members Table -->
+      <div>
+        <div class="table-wrap">
+          <div class="table-header">
+            <span>👥 Recent Members</span>
+            <button class="btn btn-outline" style="font-size:11px;padding:6px 14px;" onclick="showPage('members')">View All »</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Blood</th>
+                  <th>Area</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="home-member-table">
+                <tr><td>1</td><td>OECM-2025-0006</td><td>Rahul Mondal</td><td><span class="blood-badge">O+</span></td><td>Bagmara</td><td><span class="status-badge status-approved">✓ Approved</span></td></tr>
+                <tr><td>2</td><td>OECM-2025-0005</td><td>Nabid Hassan</td><td><span class="blood-badge">B+</span></td><td>Kandi</td><td><span class="status-badge status-approved">✓ Approved</span></td></tr>
+                <tr><td>3</td><td>OECM-2025-0004</td><td>Mizanur Rahman</td><td><span class="blood-badge" style="background:#7c3aed;">AB+</span></td><td>Kandi</td><td><span class="status-badge status-approved">✓ Approved</span></td></tr>
+                <tr><td>4</td><td>OECM-2025-0003</td><td>Priya Das</td><td><span class="blood-badge" style="background:#2563eb;">B-</span></td><td>Kandi</td><td><span class="status-badge status-approved">✓ Approved</span></td></tr>
+                <tr><td>5</td><td>OECM-2025-0002</td><td>Maleka Begum</td><td><span class="blood-badge">O+</span></td><td>Bagmara</td><td><span class="status-badge status-approved">✓ Approved</span></td></tr>
+                <tr><td>6</td><td>OECM-2025-0001</td><td>Abdul Karim</td><td><span class="blood-badge" style="background:#059669;">A+</span></td><td>Bagmara</td><td><span class="status-badge status-approved">✓ Approved</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Notice + Contact -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- Notice Board -->
+        <div class="table-wrap">
+          <div class="table-header">📢 Notice Board</div>
+          <div style="padding:16px;" id="notice-board">
+            <div class="notice-item">
+              <div class="notice-date"><div>12</div><div>Apr</div><div>2025</div></div>
+              <div class="notice-content"><h4>New Member Registration Started</h4><p>2025 registration is now open</p></div>
+            </div>
+            <div class="notice-item">
+              <div class="notice-date"><div>05</div><div>Apr</div><div>2025</div></div>
+              <div class="notice-content"><h4>Blood Donation Camp — 20 April</h4><p>Bagmara Hat, 10 AM – 4 PM</p></div>
+            </div>
+            <div class="notice-item">
+              <div class="notice-date"><div>01</div><div>Mar</div><div>2025</div></div>
+              <div class="notice-content"><h4>Annual General Meeting Date Announced</h4><p>Details to follow</p></div>
+            </div>
+          </div>
+        </div>
+        <!-- Contact -->
+        <div class="table-wrap">
+          <div class="table-header">📞 Contact</div>
+          <div style="padding:16px;font-size:13px;line-height:2;">
+            <p>📍 Murshidabad, West Bengal, India</p>
+            <p>📞 +91 XXXXX XXXXX</p>
+            <p>📧 info@oecm.org</p>
+            <p>🌐 www.oecm.org</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP SECTION -->
+  <div style="padding: 40px; background: var(--white); text-align:center;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-title" style="justify-content:center;">🗺️ Our Location — Murshidabad, West Bengal</div>
+      <div class="location-map" style="height:350px;overflow:hidden;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.7126024887!2d88.08399255!3d24.183786100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f96d0b67f8a1ef%3A0x8af30a9bc35dd0b6!2sMurshidabad%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MEMBERS PAGE -->
+<div id="page-members" class="page" style="padding:40px;background:#f8fafc;min-height:80vh;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-title">👥 Member Directory</div>
+    <div class="alert alert-info">🔒 This page is accessible to admin only. Please login to view full member details.</div>
+    <div style="background:var(--white);padding:30px;border-radius:16px;text-align:center;box-shadow:var(--shadow-sm);">
+      <div style="font-size:60px;margin-bottom:16px;">🔐</div>
+      <h3 style="font-size:20px;margin-bottom:12px;">Admin Access Required</h3>
+      <p style="color:var(--gray);margin-bottom:20px;">Only admin can view the complete member list with personal details.</p>
+      <button class="btn btn-primary" onclick="openAdminLogin()"><i class="fas fa-lock"></i> Login as Admin</button>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTRATION PAGE -->
+<div id="page-registration" class="page" style="background:#f8fafc;min-height:80vh;">
+  <div style="padding:40px;">
+    <div style="max-width:800px;margin:0 auto;">
+      <div class="reg-container">
+        <div class="reg-header">
+          <h2>📋 Member Registration Form</h2>
+          <p>After submission, admin approval is required. You will receive your ID Card upon approval.</p>
+        </div>
+        <div class="reg-body">
+          <div class="alert alert-warn">⚠️ After submitting this form, you will get your ID card only after <strong>admin approval</strong> and data will be sent to Google Sheet.</div>
+
+          <!-- Photo Upload -->
+          <div class="reg-section">
+            <div class="reg-section-title">📷 Profile Photo (Required)</div>
+            <div class="photo-upload" onclick="document.getElementById('reg-photo').click()">
+              <div class="photo-upload-icon">📷</div>
+              <p>Click to upload photo (JPG/PNG • Max 5MB)</p>
+              <input type="file" id="reg-photo" accept="image/*" style="display:none;" onchange="previewRegPhoto(this)">
+            </div>
+            <div id="reg-photo-preview" style="display:none;margin-top:12px;text-align:center;">
+              <img id="reg-photo-img" src="" style="width:100px;height:100px;border-radius:12px;object-fit:cover;border:3px solid var(--blue-accent);">
+            </div>
+          </div>
+
+          <!-- Personal Info -->
+          <div class="reg-section">
+            <div class="reg-section-title">👤 Personal Information</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name (English) *</label>
+                <input type="text" id="reg-name-en" placeholder="e.g. Rahul Mondal" required>
+              </div>
+              <div class="form-group">
+                <label>Father's Name *</label>
+                <input type="text" id="reg-father" placeholder="Father's full name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Date of Birth *</label>
+                <input type="date" id="reg-dob" required>
+              </div>
+              <div class="form-group">
+                <label>Gender *</label>
+                <select id="reg-gender" required>
+                  <option value="">Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Voter ID / NID</label>
+                <input type="text" id="reg-nid" placeholder="NID / Voter ID number">
+              </div>
+              <div class="form-group">
+                <label>Occupation</label>
+                <input type="text" id="reg-occupation" placeholder="Student / Farmer / Business...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Blood & Contact -->
+          <div class="reg-section">
+            <div class="reg-section-title">🩸 Blood & Contact</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Blood Group *</label>
+                <select id="reg-blood" required>
+                  <option value="">Select Blood Group</option>
+                  <option>A+</option><option>A-</option>
+                  <option>B+</option><option>B-</option>
+                  <option>AB+</option><option>AB-</option>
+                  <option>O+</option><option>O-</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Mobile Number *</label>
+                <input type="tel" id="reg-mobile" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>WhatsApp Number</label>
+                <input type="tel" id="reg-whatsapp" placeholder="+91 XXXXX XXXXX">
+              </div>
+              <div class="form-group">
+                <label>Emergency Contact</label>
+                <input type="tel" id="reg-emergency" placeholder="Family member's number">
+              </div>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="reg-section">
+            <div class="reg-section-title">📍 Address</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>District *</label>
+                <select id="reg-district" required>
+                  <option value="">Select District</option>
+                  <option>Murshidabad</option>
+                  <option>Birbhum</option>
+                  <option>Bardhaman</option>
+                  <option>Nadia</option>
+                  <option>Malda</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Block / Upazila / Area *</label>
+                <input type="text" id="reg-block" placeholder="Enter your block/area name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Village Name *</label>
+                <input type="text" id="reg-village" placeholder="Enter your village name" required>
+              </div>
+              <div class="form-group">
+                <label>Post Office</label>
+                <input type="text" id="reg-post" placeholder="Post office name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>PIN Code</label>
+                <input type="text" id="reg-pin" placeholder="742XXX">
+              </div>
+              <div class="form-group">
+                <label>Full Address *</label>
+                <input type="text" id="reg-fulladdr" placeholder="House no, Village, Post, PS, District" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Organization -->
+          <div class="reg-section">
+            <div class="reg-section-title">🏢 Organization Info</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Role / Position *</label>
+                <select id="reg-role" required>
+                  <option value="">Select Role</option>
+                  <option>General Member</option>
+                  <option>Volunteer</option>
+                  <option>Blood Donor</option>
+                  <option>Executive Member</option>
+                  <option>Secretary</option>
+                  <option>President</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>How did you hear about us?</label>
+                <select id="reg-source">
+                  <option value="">Select</option>
+                  <option>Friend / Family</option>
+                  <option>Social Media</option>
+                  <option>Event</option>
+                  <option>Website</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:10px;">
+            <button class="btn btn-primary" style="flex:1;padding:14px;" onclick="submitRegistration()">
+              <i class="fas fa-paper-plane"></i> Submit Application
+            </button>
+            <button class="btn btn-outline" style="border:2px solid #e2e8f0;color:#64748b;padding:14px 20px;" onclick="previewIdCard()">
+              <i class="fas fa-eye"></i> Preview Card
+            </button>
+            <button class="btn btn-outline" style="border:2px solid #e2e8f0;color:#64748b;padding:14px 20px;" onclick="resetRegForm()">
+              <i class="fas fa-redo"></i> Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ID CARD PAGE -->
+<div id="page-idcard" class="page" style="padding:40px;background:#f8fafc;min-height:80vh;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-title">🪪 Digital ID Card</div>
+    <div class="alert alert-warn">🔒 This is a pending ID card. You will receive the final card only after <strong>admin approval</strong>.</div>
+
+    <div class="id-card-wrap">
+      <!-- FRONT -->
+      <div class="id-card" id="id-card-front">
+        <div class="id-front">
+          <div class="id-front-header">
+            <div class="logo-sm">🌍</div>
+            <div class="org-text">
+              <div style="font-size:11px;font-weight:800;">ONE EARTH CARE MOVEMENT</div>
+              <div style="font-size:9px;opacity:0.8;">MURSHIDABAD • WEST BENGAL • INDIA</div>
+            </div>
+          </div>
+          <div class="id-front-body">
+            <div class="id-photo-area">
+              <div class="id-photo" id="card-photo-display">👤</div>
+              <div class="id-member-info">
+                <h3 id="card-name">Member Name</h3>
+                <div class="role-tag" id="card-role">GENERAL MEMBER</div>
+                <div class="id-detail"><strong>Father:</strong> <span id="card-father">—</span></div>
+                <div class="id-detail"><strong>Village:</strong> <span id="card-village">—</span></div>
+                <div class="id-detail"><strong>Area:</strong> <span id="card-area">—</span></div>
+                <div class="id-detail"><strong>Mobile:</strong> <span id="card-mobile">—</span></div>
+                <div class="id-detail"><strong>Blood:</strong> <span id="card-blood">—</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="id-footer">
+            <div>
+              <div class="id-number" id="card-id">OECM-2025-0000</div>
+              <div style="font-size:9px;opacity:0.7;">Issued: <span id="card-date">01/01/2025</span></div>
+            </div>
+            <div class="id-qr">
+              <div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div>
+              <div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div>
+              <div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div>
+              <div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div>
+              <div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div><div class="id-qr-cell w"></div><div class="id-qr-cell"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACK -->
+      <div class="id-card">
+        <div class="id-back">
+          <div class="id-back-header">🩸 Blood Donation Info / রক্তদানের তথ্য</div>
+          <div class="id-back-body">
+            <div class="blood-display" id="card-blood-display">—</div>
+            <div class="id-org-info">
+              Organization: One Earth Care Movement<br>
+              Murshidabad, West Bengal, India<br>
+              📧 info@oecm.org
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Instructions / নির্দেশাবলি:</div>
+            <ol class="id-rules">
+              <li>এই কার্ড হস্তান্তরযোগ্য নয়</li>
+              <li>হারিয়ে গেলে অফিসে জানান</li>
+              <li>সর্বদা সাথে রাখুন</li>
+              <li>কার্ড সবসময় সংরক্ষিত রাখুন</li>
+            </ol>
+            <div class="id-sig">
+              ____________________<br>
+              Authorized Signatory<br>
+              One Earth Care Movement
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;justify-content:center;">
+      <button class="btn btn-primary" onclick="openDownloadPwdModal()"><i class="fas fa-download"></i> Download Card</button>
+      <button class="btn btn-outline" style="border:2px solid #e2e8f0;color:#64748b;" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+    </div>
+  </div>
+</div>
+
+<!-- BLOOD SEARCH PAGE -->
+<div id="page-blood" class="page" style="background:#fff5f5;min-height:80vh;padding:40px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-title" style="color:var(--red);">🩸 Blood Donor Search</div>
+    
+    <div style="background:var(--white);padding:16px;border-radius:12px;margin-bottom:20px;font-size:13px;border-left:4px solid var(--blue-accent);">
+      📍 Privacy Policy: Members from a particular area will only see donors from that area.
+    </div>
+
+    <div style="background:var(--white);border-radius:16px;padding:20px;box-shadow:var(--shadow-sm);margin-bottom:24px;">
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:16px;">
+        <div style="flex:1;min-width:200px;">
+          <label style="font-size:12px;font-weight:700;display:block;margin-bottom:6px;">SELECT DISTRICT</label>
+          <select id="blood-district" onchange="filterBlood()" style="width:100%;padding:10px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;">
+            <option value="">All Districts</option>
+            <option>Murshidabad</option>
+            <option>Birbhum</option>
+            <option>Nadia</option>
+          </select>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <label style="font-size:12px;font-weight:700;display:block;margin-bottom:6px;">SELECT AREA / BLOCK</label>
+          <input type="text" id="blood-area-search" placeholder="Type area or village name..." onkeyup="filterBlood()" style="width:100%;padding:10px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;">
+        </div>
+      </div>
+      <div class="blood-filters" id="blood-type-filters">
+        <button class="blood-btn active" onclick="setBloodFilter(this,'all')">All</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'A+')">A+</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'A-')">A-</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'B+')">B+</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'B-')">B-</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'AB+')">AB+</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'AB-')">AB-</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'O+')">O+</button>
+        <button class="blood-btn" onclick="setBloodFilter(this,'O-')">O-</button>
+      </div>
+    </div>
+
+    <div class="blood-cards" id="blood-cards-container">
+      <!-- Generated by JS -->
+    </div>
+
+    <!-- Blood Request Form -->
+    <div style="margin-top:32px;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);">
+      <div style="background:linear-gradient(135deg,var(--red),#b91c1c);color:var(--white);padding:16px 24px;font-weight:700;font-size:15px;">
+        🆘 Blood Request Form
+      </div>
+      <div style="padding:24px;">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Patient Name *</label>
+            <input type="text" id="req-patient" placeholder="Patient's full name">
+          </div>
+          <div class="form-group">
+            <label>Blood Group Needed *</label>
+            <select id="req-blood">
+              <option value="">Select Blood Group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Hospital / Location *</label>
+            <input type="text" id="req-hospital" placeholder="Hospital name and location">
+          </div>
+          <div class="form-group">
+            <label>Contact Number *</label>
+            <input type="tel" id="req-contact" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Urgency Level</label>
+          <select id="req-urgency">
+            <option>Urgent (Within 2 hours)</option>
+            <option>Within 24 hours</option>
+            <option>Within 3 days</option>
+          </select>
+        </div>
+        <button class="btn btn-red" onclick="submitBloodRequest()" style="margin-top:8px;width:100%;padding:14px;">
+          <i class="fas fa-paper-plane"></i> Send Blood Request
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY PAGE -->
+<div id="page-gallery" class="page" style="padding:40px;background:#f8fafc;min-height:80vh;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+      <div class="section-title" style="margin-bottom:0;">🖼️ Organization Gallery</div>
+      <button class="btn btn-primary" onclick="openAdminGalleryUpload()"><i class="fas fa-upload"></i> Upload Photo (Admin)</button>
+    </div>
+    <div class="gallery-grid" id="gallery-container">
+      <div class="gallery-album card-3d" onclick="openAlbum('Blood Donation Camp 2024')">
+        <div class="album-cover" style="background:linear-gradient(135deg,#fef2f2,#fee2e2);">🩸</div>
+        <div class="album-info"><h4>Blood Donation Camp 2024</h4><span>8 photos</span></div>
+      </div>
+      <div class="gallery-album card-3d" onclick="openAlbum('Tree Plantation 2024')">
+        <div class="album-cover" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">🌳</div>
+        <div class="album-info"><h4>Tree Plantation 2024</h4><span>12 photos</span></div>
+      </div>
+      <div class="gallery-album card-3d" onclick="openAlbum('Annual Meeting 2025')">
+        <div class="album-cover" style="background:linear-gradient(135deg,#fffbeb,#fef9c3);">🤝</div>
+        <div class="album-info"><h4>Annual Meeting 2025</h4><span>5 photos</span></div>
+      </div>
+      <div class="gallery-album card-3d" onclick="openAlbum('Environment Day 2024')">
+        <div class="album-cover" style="background:linear-gradient(135deg,#f5f3ff,#ede9fe);">🌍</div>
+        <div class="album-info"><h4>Environment Day 2024</h4><span>10 photos</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="page-contact" class="page">
+  <div id="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>📞 Get In Touch</h3>
+        <p style="color:rgba(255,255,255,0.7);margin-bottom:24px;font-size:14px;line-height:1.7;">We are always ready to help. Whether you need blood donation support, want to join us, or have any questions — reach out to us.</p>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text"><strong>Address</strong>Murshidabad, West Bengal — 742101, India</div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text"><strong>Phone</strong>+91 XXXXX XXXXX</div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📧</div>
+          <div class="contact-text"><strong>Email</strong>info@oecm.org</div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🌐</div>
+          <div class="contact-text"><strong>Website</strong>www.oecm.org</div>
+        </div>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:24px;">
+          <h4 style="color:var(--gold);margin-bottom:16px;font-size:16px;">Send Message</h4>
+          <div class="form-group"><label style="color:rgba(255,255,255,0.8);">Your Name</label><input type="text" placeholder="Full name" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--white);"></div>
+          <div class="form-group"><label style="color:rgba(255,255,255,0.8);">Mobile</label><input type="tel" placeholder="+91 XXXXX XXXXX" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--white);"></div>
+          <div class="form-group"><label style="color:rgba(255,255,255,0.8);">Message</label><textarea rows="4" placeholder="Your message..." style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--white);resize:none;width:100%;padding:10px 14px;border-radius:10px;font-family:inherit;font-size:14px;"></textarea></div>
+          <button class="btn btn-gold" style="width:100%;" onclick="showToast('Message sent successfully! We will contact you soon.','success')"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Map -->
+  <div style="height:350px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235527.7126024887!2d88.08399255!3d24.183786100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f96d0b67f8a1ef%3A0x8af30a9bc35dd0b6!2sMurshidabad%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- ==================== ADMIN PANEL ==================== -->
+<div id="admin-panel">
+  <div style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:16px 30px;display:flex;justify-content:space-between;align-items:center;color:var(--white);">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:20px;">🛡️</span>
+      <div>
+        <div style="font-weight:800;font-size:16px;">Admin Panel</div>
+        <div style="font-size:11px;opacity:0.7;">One Earth Care Movement</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <span style="font-size:13px;opacity:0.8;">Welcome, Admin</span>
+      <button class="btn btn-outline" onclick="adminLogout()" style="font-size:12px;padding:7px 14px;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </div>
+  
+  <div class="admin-layout">
+    <div class="admin-sidebar">
+      <div class="admin-sidebar-title">Admin Menu</div>
+      <div class="sidebar-item" onclick="showAdminPage('dashboard')"><i class="fas fa-chart-bar"></i> Dashboard</div>
+      <div class="sidebar-item" onclick="showAdminPage('pending')"><i class="fas fa-clock"></i> Pending Approvals <span class="sidebar-badge" id="pending-count">3</span></div>
+      <div class="sidebar-item" onclick="showAdminPage('approved-members')"><i class="fas fa-user-check"></i> Approved Members</div>
+      <div class="sidebar-item" onclick="showAdminPage('blood-donors')"><i class="fas fa-tint"></i> Blood Donors</div>
+      <div class="sidebar-item" onclick="showAdminPage('notices')"><i class="fas fa-bullhorn"></i> Manage Notices</div>
+      <div class="sidebar-item" onclick="showAdminPage('gallery-admin')"><i class="fas fa-images"></i> Gallery Manager</div>
+      <div class="sidebar-item" onclick="showAdminPage('idcards-admin')"><i class="fas fa-id-card"></i> ID Cards</div>
+      <div class="sidebar-item" onclick="showAdminPage('gsheet')"><i class="fas fa-table"></i> Google Sheet</div>
+      <div class="sidebar-item" onclick="showAdminPage('stats')"><i class="fas fa-chart-line"></i> Statistics</div>
+    </div>
+    
+    <div class="admin-main">
+      <!-- DASHBOARD -->
+      <div class="admin-page active" id="admin-dashboard">
+        <div class="admin-page-title">📊 Dashboard</div>
+        <div class="admin-stats-grid">
+          <div class="admin-stat"><div class="number" style="color:var(--blue-accent);">348</div><div class="label">Total Members</div></div>
+          <div class="admin-stat"><div class="number" style="color:var(--green);">312</div><div class="label">Approved</div></div>
+          <div class="admin-stat"><div class="number" style="color:var(--gold);">3</div><div class="label">Pending</div></div>
+          <div class="admin-stat"><div class="number" style="color:var(--red);">124</div><div class="label">Blood Donors</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div style="background:var(--white);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);">
+            <h4 style="margin-bottom:16px;font-size:15px;">Recent Activity</h4>
+            <div style="font-size:13px;color:var(--gray);line-height:2.2;">
+              <div>✅ New member approved — Abdul Karim</div>
+              <div>📝 New registration — Mohammad Ali</div>
+              <div>📢 Notice posted — Blood Donation Camp</div>
+              <div>🌳 Gallery updated — Tree Plantation</div>
+            </div>
+          </div>
+          <div style="background:var(--white);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);">
+            <h4 style="margin-bottom:16px;font-size:15px;">Quick Actions</h4>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <button class="btn btn-primary" onclick="showAdminPage('pending')"><i class="fas fa-clock"></i> Review Pending (3)</button>
+              <button class="btn btn-green" onclick="showAdminPage('notices')"><i class="fas fa-plus"></i> Create Notice</button>
+              <button class="btn btn-gold" onclick="showAdminPage('gallery-admin')"><i class="fas fa-upload"></i> Upload Photos</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PENDING APPROVALS -->
+      <div class="admin-page" id="admin-pending">
+        <div class="admin-page-title">⏳ Pending Approvals</div>
+        <div id="pending-list">
+          <div class="approval-card">
+            <div style="width:50px;height:50px;background:#e0f2fe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;">👤</div>
+            <div class="approval-info">
+              <h4>Mohammad Ali</h4>
+              <p>B+ • Nawda village, Murshidabad • Registered: 12 Apr 2025</p>
+            </div>
+            <div class="approval-actions">
+              <button class="btn btn-green" style="font-size:12px;padding:7px 14px;" onclick="approveUser(this,'Mohammad Ali')"><i class="fas fa-check"></i> Approve</button>
+              <button class="btn btn-red" style="font-size:12px;padding:7px 14px;background:var(--red);" onclick="rejectUser(this)"><i class="fas fa-times"></i> Reject</button>
+              <button class="btn btn-primary" style="font-size:12px;padding:7px 14px;" onclick="openAdminLogin()"><i class="fas fa-id-card"></i> Issue ID</button>
+            </div>
+          </div>
+          <div class="approval-card">
+            <div style="width:50px;height:50px;background:#fce7f3;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;">👤</div>
+            <div class="approval-info">
+              <h4>Fatima Khatun</h4>
+              <p>O+ • Jiaganj, Murshidabad • Registered: 11 Apr 2025</p>
+            </div>
+            <div class="approval-actions">
+              <button class="btn btn-green" style="font-size:12px;padding:7px 14px;" onclick="approveUser(this,'Fatima Khatun')"><i class="fas fa-check"></i> Approve</button>
+              <button class="btn btn-red" style="font-size:12px;padding:7px 14px;background:var(--red);" onclick="rejectUser(this)"><i class="fas fa-times"></i> Reject</button>
+              <button class="btn btn-primary" style="font-size:12px;padding:7px 14px;"><i class="fas fa-id-card"></i> Issue ID</button>
+            </div>
+          </div>
+          <div class="approval-card">
+            <div style="width:50px;height:50px;background:#fef9c3;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;">👤</div>
+            <div class="approval-info">
+              <h4>Raju Mondal</h4>
+              <p>AB- • Berhampore, Murshidabad • Registered: 10 Apr 2025</p>
+            </div>
+            <div class="approval-actions">
+              <button class="btn btn-green" style="font-size:12px;padding:7px 14px;" onclick="approveUser(this,'Raju Mondal')"><i class="fas fa-check"></i> Approve</button>
+              <button class="btn btn-red" style="font-size:12px;padding:7px 14px;background:var(--red);" onclick="rejectUser(this)"><i class="fas fa-times"></i> Reject</button>
+              <button class="btn btn-primary" style="font-size:12px;padding:7px 14px;"><i class="fas fa-id-card"></i> Issue ID</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPROVED MEMBERS -->
+      <div class="admin-page" id="admin-approved-members">
+        <div class="admin-page-title">✅ Approved Members</div>
+        <div style="display:flex;gap:12px;margin-bottom:20px;">
+          <input type="text" placeholder="Search by name, ID, village..." style="flex:1;padding:10px 14px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;">
+          <button class="btn btn-green" onclick="downloadCSVAdmin()"><i class="fas fa-download"></i> CSV Download</button>
+          <button class="btn btn-primary" onclick="downloadJSONAdmin()"><i class="fas fa-download"></i> JSON Download</button>
+        </div>
+        <div class="table-wrap">
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr><th>#</th><th>ID</th><th>Name</th><th>Blood</th><th>Village</th><th>Mobile</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody id="admin-member-table">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOOD DONORS -->
+      <div class="admin-page" id="admin-blood-donors">
+        <div class="admin-page-title">🩸 Blood Donors List</div>
+        <div class="table-wrap">
+          <div style="overflow-x:auto;">
+            <table>
+              <thead><tr><th>#</th><th>Name</th><th>Blood</th><th>Village</th><th>Area</th><th>Mobile</th></tr></thead>
+              <tbody id="admin-donors-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTICES -->
+      <div class="admin-page" id="admin-notices">
+        <div class="admin-page-title">📢 Manage Notices</div>
+        <div class="notice-form">
+          <h4 style="margin-bottom:16px;">Create New Notice</h4>
+          <div class="form-group"><label>Notice Title</label><input type="text" id="notice-title" placeholder="Enter notice title"></div>
+          <div class="form-group"><label>Notice Content</label><textarea id="notice-content" rows="4" placeholder="Enter full notice details..." style="width:100%;padding:10px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:14px;"></textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label>Notice Date</label><input type="date" id="notice-date"></div>
+            <div class="form-group"><label>Category</label>
+              <select id="notice-cat" style="width:100%;padding:10px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;">
+                <option>General</option><option>Blood Donation</option><option>Meeting</option><option>Event</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="postNotice()"><i class="fas fa-plus"></i> Post Notice</button>
+        </div>
+        <div style="margin-top:24px;" id="posted-notices">
+          <h4 style="margin-bottom:12px;">Posted Notices</h4>
+          <div class="notice-item">
+            <div class="notice-date"><div>12</div><div>Apr</div><div>2025</div></div>
+            <div class="notice-content"><h4>New Member Registration Started 2025</h4><p>Registration is open for new members. Apply now via the website.</p></div>
+            <button style="margin-left:auto;background:var(--red);color:white;border:none;border-radius:8px;padding:6px 12px;cursor:pointer;" onclick="this.closest('.notice-item').remove()">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALLERY ADMIN -->
+      <div class="admin-page" id="admin-gallery-admin">
+        <div class="admin-page-title">🖼️ Gallery Manager</div>
+        <div style="background:var(--white);border-radius:14px;padding:24px;box-shadow:var(--shadow-sm);margin-bottom:20px;">
+          <h4 style="margin-bottom:16px;">Create New Album</h4>
+          <div class="form-row">
+            <div class="form-group"><label>Album Name</label><input type="text" id="album-name" placeholder="e.g. Blood Donation Camp 2025"></div>
+            <div class="form-group"><label>Upload Photos</label><input type="file" id="album-photos" multiple accept="image/*" style="padding:8px;border:2px solid #e2e8f0;border-radius:10px;width:100%;"></div>
+          </div>
+          <button class="btn btn-primary" onclick="createAlbum()"><i class="fas fa-plus"></i> Create Album</button>
+        </div>
+        <div class="photo-grid-admin" id="admin-photo-grid">
+          <div class="photo-thumb">🩸<div style="position:absolute;bottom:6px;right:6px;background:var(--red);color:white;font-size:9px;padding:2px 6px;border-radius:4px;">Delete</div></div>
+          <div class="photo-thumb">🌳</div>
+          <div class="photo-thumb">🤝</div>
+          <div class="photo-thumb">🌍</div>
+        </div>
+      </div>
+
+      <!-- ID CARDS ADMIN -->
+      <div class="admin-page" id="admin-idcards-admin">
+        <div class="admin-page-title">🪪 ID Card Management</div>
+        <div class="alert alert-info">Approved members can download their ID cards. You can view and download all ID cards from here.</div>
+        <div id="id-cards-list">
+          <div class="approval-card">
+            <div style="width:50px;height:50px;background:#eff6ff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;">🪪</div>
+            <div class="approval-info"><h4>Abdul Karim — OECM-2025-0001</h4><p>A+ • Bagmara • Issued: 01 Apr 2025</p></div>
+            <div class="approval-actions">
+              <button class="btn btn-primary" style="font-size:12px;padding:7px 14px;" onclick="showToast('Downloading ID card...','success')"><i class="fas fa-download"></i> Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GOOGLE SHEET -->
+      <div class="admin-page" id="admin-gsheet">
+        <div class="admin-page-title">📊 Google Sheet Integration</div>
+        <div class="alert alert-success">✅ Admin approved member data will be automatically sent to Google Sheet. You can use the public or private view URL below.</div>
+        <div style="background:var(--white);border-radius:14px;padding:24px;box-shadow:var(--shadow-sm);margin-bottom:20px;">
+          <h4 style="margin-bottom:16px;">🔗 Google Sheet Published CSV URL</h4>
+          <div class="form-group">
+            <label>Published CSV URL</label>
+            <input type="url" id="gsheet-url" placeholder="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv">
+          </div>
+          <div style="display:flex;gap:12px;">
+            <button class="btn btn-primary" onclick="connectSheet()"><i class="fas fa-link"></i> Connect Sheet</button>
+            <button class="btn btn-green" onclick="syncSheet()"><i class="fas fa-sync"></i> Sync Now</button>
+          </div>
+          <div style="margin-top:20px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:16px;font-size:13px;">
+            <strong>Setup Instructions:</strong><br>
+            1. Go to sheets.google.com and create a new sheet<br>
+            2. Add columns: ID | Name | Name_EN | Blood | Area | Village | Phone | Role | Status | Date<br>
+            3. File → Share → Publish to web → Sheet1 → CSV → Publish<br>
+            4. Paste the Published URL and click Connect Sheet
+          </div>
+        </div>
+        <div style="background:var(--white);border-radius:14px;padding:24px;box-shadow:var(--shadow-sm);">
+          <h4 style="margin-bottom:16px;">📥 Export Current Data</h4>
+          <div style="display:flex;gap:12px;">
+            <button class="btn btn-primary" onclick="downloadCSVAdmin()"><i class="fas fa-file-csv"></i> CSV Download</button>
+            <button class="btn btn-green" onclick="downloadJSONAdmin()"><i class="fas fa-file-code"></i> JSON Download</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATISTICS -->
+      <div class="admin-page" id="admin-stats">
+        <div class="admin-page-title">📈 Statistics</div>
+        <div class="admin-stats-grid">
+          <div class="admin-stat"><div class="number" style="color:var(--blue-accent);">348</div><div class="label">Total Members</div></div>
+          <div class="admin-stat"><div class="number" style="color:var(--green);">312</div><div class="label">Active Members</div></div>
+          <div class="admin-stat"><div class="number" style="color:var(--red);">124</div><div class="label">Donors</div></div>
+          <div class="admin-stat"><div class="number" style="color:var(--gold);">56</div><div class="label">Donations Done</div></div>
+        </div>
+        <div style="background:var(--white);border-radius:14px;padding:24px;box-shadow:var(--shadow-sm);">
+          <h4 style="margin-bottom:16px;">Blood Group Distribution</h4>
+          <div id="blood-chart" style="display:flex;gap:12px;flex-wrap:wrap;">
+            <!-- Blood bars -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+        <div style="width:44px;height:44px;background:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;">🌍</div>
+        <div>
+          <h3>One Earth Care Movement</h3>
+          <div style="font-size:10px;color:var(--gold);letter-spacing:1px;">ONE EARTH, ONE RESPONSIBILITY</div>
+        </div>
+      </div>
+      <p>Dedicated to serving humanity. In Murshidabad — through blood donation, social development, and environmental protection. We stand together.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#" onclick="showPage('home');return false;">Home</a>
+      <a href="#" onclick="showPage('members');return false;">Member List</a>
+      <a href="#" onclick="showPage('registration');return false;">Registration</a>
+      <a href="#" onclick="showPage('blood');return false;">Blood Donation</a>
+      <a href="#" onclick="showPage('gallery');return false;">Gallery</a>
+    </div>
+    <div class="footer-col">
+      <h4>Areas Covered</h4>
+      <a href="#">Murshidabad</a>
+      <a href="#">Birbhum</a>
+      <a href="#">Nadia</a>
+      <a href="#">Malda</a>
+      <a href="#">West Bengal</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#">📍 Murshidabad, WB 742101</a>
+      <a href="#">🇮🇳 India</a>
+      <a href="#">📧 info@oecm.org</a>
+      <a href="#">🌐 www.oecm.org</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 One Earth Care Movement • Murshidabad, West Bengal, India | Reg. No: WB/NGO/XXXX/2025</span>
+    <span>Made with ❤️ for Humanity</span>
+  </div>
+</footer>
+
+<!-- ==================== MODALS ==================== -->
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal-overlay" id="admin-login-modal">
+  <div class="modal" style="max-width:400px;">
+    <div class="modal-header" style="background:linear-gradient(135deg,#0a1f44,#1a3a6e);">
+      <h3>🛡️ Admin Login</h3>
+      <button class="modal-close" onclick="closeModal('admin-login-modal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-warn">This area is restricted to authorized administrators only.</div>
+      <div class="form-group">
+        <label>Admin Password</label>
+        <div class="pwd-field">
+          <input type="password" id="admin-pwd" placeholder="Enter password" maxlength="20" onkeydown="if(event.key==='Enter')checkAdminLogin()">
+        </div>
+      </div>
+      <div id="admin-login-error" style="color:var(--red);font-size:13px;margin-bottom:12px;display:none;">❌ Incorrect password. Please try again.</div>
+      <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="checkAdminLogin()"><i class="fas fa-unlock"></i> Login to Admin Panel</button>
+      <div style="text-align:center;margin-top:12px;font-size:12px;color:var(--gray);">Default password: <strong>admin2025</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- JOIN MODAL -->
+<div class="modal-overlay" id="join-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>🌍 Join One Earth Care Movement</h3>
+      <button class="modal-close" onclick="closeModal('join-modal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-info">Fill out the full registration form to apply for membership. Admin approval required.</div>
+      <div style="display:flex;gap:14px;margin-bottom:16px;">
+        <div style="flex:1;text-align:center;padding:20px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;" onclick="closeModal('join-modal');showPage('registration');">
+          <div style="font-size:32px;margin-bottom:8px;">📋</div>
+          <div style="font-weight:700;font-size:14px;">Full Registration</div>
+          <div style="font-size:12px;color:var(--gray);">Complete membership application</div>
+        </div>
+        <div style="flex:1;text-align:center;padding:20px;border:2px solid #ffe4e1;border-radius:12px;cursor:pointer;" onclick="closeModal('join-modal');showPage('blood');">
+          <div style="font-size:32px;margin-bottom:8px;">🩸</div>
+          <div style="font-weight:700;font-size:14px;color:var(--red);">Register as Donor</div>
+          <div style="font-size:12px;color:var(--gray);">Blood donor registration</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;" onclick="closeModal('join-modal');showPage('registration');">
+        <i class="fas fa-arrow-right"></i> Go to Registration Form
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- DOWNLOAD PASSWORD MODAL -->
+<div class="modal-overlay" id="download-pwd-modal">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-header">
+      <h3>🔐 Download ID Card</h3>
+      <button class="modal-close" onclick="closeModal('download-pwd-modal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-info">Enter your registered mobile number to download your ID card.</div>
+      <div class="form-group">
+        <label>Mobile Number / Member ID</label>
+        <input type="text" id="download-pwd" placeholder="Enter your mobile number">
+      </div>
+      <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="downloadIdCard()">
+        <i class="fas fa-download"></i> Download ID Card
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY ADMIN UPLOAD MODAL -->
+<div class="modal-overlay" id="gallery-admin-modal">
+  <div class="modal" style="max-width:400px;">
+    <div class="modal-header">
+      <h3>📸 Upload Photo — Admin</h3>
+      <button class="modal-close" onclick="closeModal('gallery-admin-modal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-warn">Only admin can upload photos to the gallery.</div>
+      <div class="form-group"><label>Admin Password</label><input type="password" id="gallery-pwd" placeholder="Enter admin password"></div>
+      <div class="form-group"><label>Album</label>
+        <select id="gallery-album-sel" style="width:100%;padding:10px;border:2px solid #e2e8f0;border-radius:10px;font-size:14px;">
+          <option>Blood Donation Camp 2024</option>
+          <option>Tree Plantation 2024</option>
+          <option>Annual Meeting 2025</option>
+          <option>+ New Album</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Photos</label><input type="file" multiple accept="image/*" style="width:100%;padding:8px;border:2px solid #e2e8f0;border-radius:10px;"></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="uploadGalleryPhoto()"><i class="fas fa-upload"></i> Upload</button>
+    </div>
+  </div>
+</div>
+
+<!-- CSV DOWNLOAD PASSWORD MODAL -->
+<div class="modal-overlay" id="csv-pwd-modal">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-header">
+      <h3>🔐 Download Data</h3>
+      <button class="modal-close" onclick="closeModal('csv-pwd-modal')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-warn">Admin password required to download member data.</div>
+      <div class="form-group"><label>Admin Password</label><input type="password" id="csv-pwd" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')verifyDownload()"></div>
+      <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="verifyDownload()"><i class="fas fa-download"></i> Verify & Download</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span id="toast-icon">✅</span>
+  <span id="toast-msg">Message here</span>
+</div>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+// ======= STATE =======
+const ADMIN_PASSWORD = 'admin2025';
+let isAdmin = false;
+let currentBloodFilter = 'all';
+
+const members = [
+  { id: 'OECM-2025-0001', name: 'Abdul Karim', blood: 'A+', village: 'Lakhikura', area: 'Bagmara', mobile: '9876543210', role: 'Volunteer', status: 'approved' },
+  { id: 'OECM-2025-0002', name: 'Maleka Begum', blood: 'O+', village: 'Mirjala', area: 'Bagmara', mobile: '9123456780', role: 'Blood Donor', status: 'approved' },
+  { id: 'OECM-2025-0003', name: 'Priya Das', blood: 'B-', village: 'Rampur', area: 'Kandi', mobile: '9988776655', role: 'General Member', status: 'approved' },
+  { id: 'OECM-2025-0004', name: 'Mizanur Rahman', blood: 'AB+', village: 'Khejuri', area: 'Kandi', mobile: '7766554433', role: 'Executive', status: 'approved' },
+  { id: 'OECM-2025-0005', name: 'Nabid Hassan', blood: 'B+', village: 'Bagmara', area: 'Bagmara', mobile: '9735702543', role: 'General Member', status: 'approved' },
+  { id: 'OECM-2025-0006', name: 'Rahul Mondal', blood: 'O+', village: 'Bagmara', area: 'Bagmara', mobile: '8765432109', role: 'Volunteer', status: 'approved' },
+];
+
+const bloodColors = { 'A+':'#059669','A-':'#0d9488','B+':'#2563eb','B-':'#4f46e5','AB+':'#7c3aed','AB-':'#9333ea','O+':'#dc2626','O-':'#b91c1c' };
+
+// ======= PAGE NAVIGATION =======
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('admin-panel').classList.remove('visible');
+  const target = document.getElementById('page-' + page);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  if (page === 'home') document.querySelector('nav a').classList.add('active');
+  if (page === 'blood') renderBloodCards();
+  if (page === 'members' && !isAdmin) { /* keep locked */ }
+}
+
+// ======= ADMIN =======
+function openAdminLogin() {
+  document.getElementById('admin-login-modal').classList.add('open');
+  setTimeout(() => document.getElementById('admin-pwd').focus(), 200);
+}
+
+function checkAdminLogin() {
+  const pwd = document.getElementById('admin-pwd').value;
+  const errEl = document.getElementById('admin-login-error');
+  if (pwd === ADMIN_PASSWORD) {
+    isAdmin = true;
+    closeModal('admin-login-modal');
+    document.getElementById('admin-pwd').value = '';
+    errEl.style.display = 'none';
+    showAdminPanel();
+    showToast('Welcome, Admin! Login successful.', 'success');
+  } else {
+    errEl.style.display = 'block';
+    document.getElementById('admin-pwd').value = '';
+    document.getElementById('admin-pwd').focus();
+  }
+}
+
+function showAdminPanel() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('admin-panel').classList.add('visible');
+  showAdminPage('dashboard');
+  renderAdminTables();
+  window.scrollTo(0, 0);
+}
+
+function adminLogout() {
+  isAdmin = false;
+  document.getElementById('admin-panel').classList.remove('visible');
+  showPage('home');
+  showToast('Logged out successfully.', 'success');
+}
+
+function showAdminPage(page) {
+  document.querySelectorAll('.admin-page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('admin-' + page);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+  event && event.target && event.target.classList.add('active');
+}
+
+function renderAdminTables() {
+  // Approved members table
+  const tbody = document.getElementById('admin-member-table');
+  if (!tbody) return;
+  tbody.innerHTML = members.map((m, i) => `
+    <tr>
+      <td>${i+1}</td>
+      <td style="font-family:monospace;font-size:11px;">${m.id}</td>
+      <td><strong>${m.name}</strong></td>
+      <td><span class="blood-badge" style="background:${bloodColors[m.blood]||'#dc2626'}">${m.blood}</span></td>
+      <td>${m.village}</td>
+      <td>${m.mobile}</td>
+      <td><span class="status-badge status-approved">✓ Approved</span></td>
+      <td><button onclick="showToast('Viewing ID for ${m.name}','success')" style="background:var(--blue-accent);color:white;border:none;border-radius:6px;padding:5px 10px;cursor:pointer;font-size:11px;">View ID</button></td>
+    </tr>
+  `).join('');
+
+  // Donors table
+  const dtbody = document.getElementById('admin-donors-table');
+  if (!dtbody) return;
+  const donors = members.filter(m => ['Blood Donor','Volunteer'].includes(m.role));
+  dtbody.innerHTML = donors.map((m, i) => `
+    <tr>
+      <td>${i+1}</td>
+      <td><strong>${m.name}</strong></td>
+      <td><span class="blood-badge" style="background:${bloodColors[m.blood]||'#dc2626'}">${m.blood}</span></td>
+      <td>${m.village}</td>
+      <td>${m.area}</td>
+      <td><a href="tel:${m.mobile}" style="color:var(--blue-accent);font-weight:700;">${m.mobile}</a></td>
+    </tr>
+  `).join('');
+
+  // Blood chart
+  const chartEl = document.getElementById('blood-chart');
+  if (!chartEl) return;
+  const groups = {};
+  members.forEach(m => { groups[m.blood] = (groups[m.blood]||0)+1; });
+  chartEl.innerHTML = Object.entries(groups).map(([g,c]) => `
+    <div style="text-align:center;min-width:60px;">
+      <div style="height:${c*25}px;background:${bloodColors[g]||'#dc2626'};border-radius:6px 6px 0 0;margin-bottom:6px;"></div>
+      <div style="font-weight:800;font-size:12px;">${g}</div>
+      <div style="font-size:11px;color:var(--gray);">${c}</div>
+    </div>
+  `).join('');
+}
+
+function approveUser(btn, name) {
+  btn.closest('.approval-card').style.background = '#f0fdf4';
+  btn.textContent = '✓ Approved';
+  btn.disabled = true;
+  const pendingCount = document.querySelectorAll('.approval-card').length;
+  document.getElementById('pending-count').textContent = Math.max(0, pendingCount - 1);
+  showToast(name + ' has been approved!', 'success');
+}
+
+function rejectUser(btn) {
+  if (confirm('Reject this application?')) {
+    btn.closest('.approval-card').remove();
+    showToast('Application rejected.', 'error');
+  }
+}
+
+// ======= BLOOD =======
+function renderBloodCards() {
+  const container = document.getElementById('blood-cards-container');
+  if (!container) return;
+  let filtered = members.filter(m => m.role === 'Blood Donor' || m.role === 'Volunteer');
+  if (currentBloodFilter !== 'all') filtered = filtered.filter(m => m.blood === currentBloodFilter);
+  const areaSearch = document.getElementById('blood-area-search') ? document.getElementById('blood-area-search').value.toLowerCase() : '';
+  if (areaSearch) filtered = filtered.filter(m => m.village.toLowerCase().includes(areaSearch) || m.area.toLowerCase().includes(areaSearch));
+  
+  container.innerHTML = filtered.length ? filtered.map(m => `
+    <div class="blood-card">
+      <div class="blood-avatar">👤</div>
+      <div class="bc-info">
+        <h4>${m.name}</h4>
+        <div class="village">📍 Village: ${m.village}, ${m.area}</div>
+        <span class="blood-badge" style="background:${bloodColors[m.blood]||'#dc2626'};margin-bottom:6px;display:inline-block;">${m.blood}</span>
+        <br><a href="tel:${m.mobile}">📞 ${m.mobile}</a>
+      </div>
+    </div>
+  `).join('') : '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--gray);"><div style="font-size:40px;margin-bottom:12px;">🔍</div><p>No blood donors found for this filter.</p></div>';
+}
+
+function setBloodFilter(btn, type) {
+  document.querySelectorAll('.blood-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentBloodFilter = type;
+  renderBloodCards();
+}
+
+function filterBlood() { renderBloodCards(); }
+
+function submitBloodRequest() {
+  const patient = document.getElementById('req-patient').value;
+  const blood = document.getElementById('req-blood').value;
+  if (!patient || !blood) { showToast('Please fill patient name and blood group.', 'error'); return; }
+  showToast('Blood request sent! Donors will be notified shortly.', 'success');
+  document.getElementById('req-patient').value = '';
+  document.getElementById('req-blood').value = '';
+  document.getElementById('req-hospital').value = '';
+  document.getElementById('req-contact').value = '';
+}
+
+// ======= REGISTRATION =======
+function previewRegPhoto(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('reg-photo-img').src = e.target.result;
+      document.getElementById('reg-photo-preview').style.display = 'block';
+      document.getElementById('card-photo-display').innerHTML = `<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">`;
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function previewIdCard() {
+  const name = document.getElementById('reg-name-en').value || 'Member Name';
+  const father = document.getElementById('reg-father').value || '—';
+  const blood = document.getElementById('reg-blood').value || '—';
+  const mobile = document.getElementById('reg-mobile').value || '—';
+  const village = document.getElementById('reg-village').value || '—';
+  const area = document.getElementById('reg-block').value || '—';
+  const role = document.getElementById('reg-role').value || 'General Member';
+  
+  document.getElementById('card-name').textContent = name;
+  document.getElementById('card-father').textContent = father;
+  document.getElementById('card-blood').textContent = blood;
+  document.getElementById('card-mobile').textContent = mobile;
+  document.getElementById('card-village').textContent = village;
+  document.getElementById('card-area').textContent = area;
+  document.getElementById('card-role').textContent = role.toUpperCase();
+  document.getElementById('card-blood-display').textContent = blood;
+  document.getElementById('card-date').textContent = new Date().toLocaleDateString('en-IN');
+  
+  showPage('idcard');
+  showToast('ID Card preview generated!', 'success');
+}
+
+function submitRegistration() {
+  const name = document.getElementById('reg-name-en').value;
+  const blood = document.getElementById('reg-blood').value;
+  const mobile = document.getElementById('reg-mobile').value;
+  const village = document.getElementById('reg-village').value;
+  
+  if (!name || !blood || !mobile || !village) {
+    showToast('Please fill all required fields.', 'error');
+    return;
+  }
+  
+  // Simulate submission
+  showToast('Application submitted! Pending admin approval.', 'success');
+  previewIdCard();
+}
+
+function resetRegForm() {
+  document.querySelectorAll('#page-registration input, #page-registration select').forEach(el => el.value = '');
+  document.getElementById('reg-photo-preview').style.display = 'none';
+  showToast('Form reset successfully.', 'success');
+}
+
+// ======= GALLERY =======
+function openAlbum(name) {
+  showToast('Opening album: ' + name, 'success');
+}
+
+function openAdminGalleryUpload() {
+  document.getElementById('gallery-admin-modal').classList.add('open');
+}
+
+function uploadGalleryPhoto() {
+  const pwd = document.getElementById('gallery-pwd').value;
+  if (pwd !== ADMIN_PASSWORD) {
+    showToast('Incorrect admin password!', 'error');
+    return;
+  }
+  closeModal('gallery-admin-modal');
+  showToast('Photos uploaded successfully!', 'success');
+}
+
+function createAlbum() {
+  const name = document.getElementById('album-name').value;
+  if (!name) { showToast('Enter album name.', 'error'); return; }
+  showToast('Album "' + name + '" created!', 'success');
+  document.getElementById('album-name').value = '';
+}
+
+// ======= NOTICES =======
+function postNotice() {
+  const title = document.getElementById('notice-title').value;
+  if (!title) { showToast('Enter notice title.', 'error'); return; }
+  const date = new Date();
+  const html = `
+    <div class="notice-item" style="margin-top:10px;">
+      <div class="notice-date"><div>${date.getDate()}</div><div>${date.toLocaleString('default',{month:'short'})}</div><div>${date.getFullYear()}</div></div>
+      <div class="notice-content"><h4>${title}</h4><p>${document.getElementById('notice-content').value}</p></div>
+      <button style="margin-left:auto;background:var(--red);color:white;border:none;border-radius:8px;padding:6px 12px;cursor:pointer;" onclick="this.closest('.notice-item').remove()">Delete</button>
+    </div>`;
+  document.getElementById('posted-notices').insertAdjacentHTML('beforeend', html);
+  document.getElementById('notice-title').value = '';
+  document.getElementById('notice-content').value = '';
+  showToast('Notice posted!', 'success');
+}
+
+// ======= GOOGLE SHEET =======
+function connectSheet() {
+  const url = document.getElementById('gsheet-url').value;
+  if (!url) { showToast('Enter Google Sheet URL.', 'error'); return; }
+  showToast('Google Sheet connected successfully!', 'success');
+}
+
+function syncSheet() { showToast('Syncing data with Google Sheet...', 'success'); }
+
+// ======= DOWNLOAD =======
+function openDownloadPwdModal() {
+  document.getElementById('download-pwd-modal').classList.add('open');
+}
+
+function downloadIdCard() {
+  const val = document.getElementById('download-pwd').value;
+  if (!val) { showToast('Enter your mobile number.', 'error'); return; }
+  closeModal('download-pwd-modal');
+  showToast('ID Card downloaded! Check your downloads folder.', 'success');
+}
+
+function downloadCSVAdmin() {
+  if (!isAdmin) { document.getElementById('csv-pwd-modal').classList.add('open'); return; }
+  const csv = ['ID,Name,Blood,Village,Area,Mobile,Role'].concat(
+    members.map(m => `${m.id},${m.name},${m.blood},${m.village},${m.area},${m.mobile},${m.role}`)
+  ).join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'OECM_Members_' + new Date().toISOString().split('T')[0] + '.csv';
+  a.click();
+  showToast('CSV downloaded!', 'success');
+}
+
+function downloadJSONAdmin() {
+  if (!isAdmin) { document.getElementById('csv-pwd-modal').classList.add('open'); return; }
+  const json = JSON.stringify(members, null, 2);
+  const a = document.createElement('a');
+  a.href = 'data:application/json,' + encodeURIComponent(json);
+  a.download = 'OECM_Members_' + new Date().toISOString().split('T')[0] + '.json';
+  a.click();
+  showToast('JSON downloaded!', 'success');
+}
+
+function verifyDownload() {
+  const pwd = document.getElementById('csv-pwd').value;
+  if (pwd === ADMIN_PASSWORD) {
+    closeModal('csv-pwd-modal');
+    isAdmin = true;
+    downloadCSVAdmin();
+    isAdmin = false;
+  } else {
+    showToast('Incorrect password!', 'error');
+  }
+}
+
+// ======= MODALS =======
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+function showJoinModal() {
+  document.getElementById('join-modal').classList.add('open');
+}
+
+// Close on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+});
+
+// ======= TOAST =======
+function showToast(msg, type = 'info') {
+  const toast = document.getElementById('toast');
+  const icon = { success: '✅', error: '❌', info: 'ℹ️' };
+  document.getElementById('toast-icon').textContent = icon[type] || 'ℹ️';
+  document.getElementById('toast-msg').textContent = msg;
+  toast.className = 'toast show ' + (type || '');
+  setTimeout(() => toast.className = 'toast', 3500);
+}
+
+// ======= INIT =======
+window.addEventListener('load', () => {
+  renderBloodCards();
+  // Animate stats
+  function animateNum(id, target) {
+    let current = 0;
+    const step = Math.ceil(target / 60);
+    const el = document.getElementById(id);
+    if (!el) return;
+    const interval = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if (current >= target) clearInterval(interval);
+    }, 25);
+  }
+  setTimeout(() => {
+    animateNum('stat-members', 348);
+    animateNum('stat-donors', 124);
+    animateNum('stat-donations', 56);
+  }, 500);
+});
+</script>
+</body>
+</html>
